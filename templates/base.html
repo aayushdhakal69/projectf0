@@ -29,6 +29,7 @@
     }
 
     footer {
+        margin-top: 17rem;
         position: relative;
         width: 100%;
         background: #003e29;
@@ -174,12 +175,201 @@
         justify-content: center;
         line-height: 50vh;
     }
+
+
+    /* navbar */
+    .logo a,
+    i {
+        font-weight: bolder;
+        font-size: larger;
+    }
+
+    .navbar {
+        position: fixed;
+    }
+
+    /* This will apply for upto 768 px deveoce only */
+    @media (max-width: 768px) {
+        .logo {
+            border-bottom: 1px solid gray;
+
+        }
+
+        .navList {
+            background: #003e29;
+        }
+
+        .navbar {
+            width: 100%;
+            height: 5vh;
+        }
+
+        .logo {
+            float: left;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 5vh;
+            width: 100%;
+            position: fixed;
+            background-color: rgb(10, 43, 29);
+
+
+        }
+
+        .navList a {
+            display: flex;
+            gap: 0 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navList {
+            float: right;
+            display: flex;
+            flex-direction: column;
+            gap: 0 1rem;
+            height: 95vh;
+            position: fixed;
+            top: 5vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem 0;
+            left: -100%;
+            transition: all .5s;
+            z-index: 999;
+            background-color: rgb(10, 43, 29);
+
+
+        }
+
+        /* hiding croos at initially */
+        .cross {
+            display: none;
+        }
+    }
+
+    /* this will apply after 768px device only */
+    @media(min-width: 768px) {
+
+        /* hiding hamburger and cross in large device */
+        .cross,
+        .hamBurger {
+            display: none;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5%;
+            height: 5vh;
+            align-items: center;
+            border-bottom: 1px solid gray;
+            position: fixed;
+            width: 100%;
+            background-color: #003e29;
+            z-index: 999;
+        }
+
+        .navList {
+            display: flex;
+            gap: 0 1rem;
+        }
+
+        .navList a {
+            padding: .2rem 2rem;
+            transition: .3s;
+            display: flex;
+            gap: 0 1rem;
+        }
+
+        .navList a:hover,
+        a.active {
+            border-radius: 1rem;
+            background: rgb(124, 172, 126);
+        }
+    }
+
+
+
+
+
+
+    /* Body Content Css is Here */
+    .firstDiv {
+        padding-top: 5vh;
+        /* we have to give padding top for thr first element */
+    }
+
+    a,
+    i {
+        color: rgb(185, 227, 184);
+        list-style: none;
+        text-decoration: none;
+    }
+
+    ul li {
+        list-style: none;
+    }
 </style>
 
 <body>
-    <div class="try">
+    <!-- <div class="try">
         <h1>JUST FOR CHECK</h1>
+    </div> -->
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" title="khetalo.com">Khetalo.com</a>
+
+            <!-- Hamburger -->
+            <i class="fa-solid fa-bars hamBurger"></i>
+            <i class="fa-solid fa-xmark cross"></i>
+        </div>
+
+        <ul class="navList">
+            <li>
+
+                <a href="#" class="active" title="home">
+                    <i class="fa-solid fa-house"></i>
+                    Home</a>
+            </li>
+
+            <li>
+                <a href="#" title="about">
+                    <i class="fa-solid fa-people"></i>
+                    About</a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-solid fa-people"></i>
+                    Members
+
+                </a>
+            </li>
+
+            <li>
+                <a href="#" title="service">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    Services</a>
+            </li>
+
+            <li>
+                <a href="#" title="contact">
+                    <i class="fa-solid fa-phone"></i>
+                    Contact</a>
+            </li>
+        </ul>
+
+
+
+        <!-- hmaburger is here -->
     </div>
+
+
+
+
+
     <div class="main_footer"></div>
     <footer>
         <div class="waves">
