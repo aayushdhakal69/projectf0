@@ -60,10 +60,11 @@
         }
 
         .box1 {
-            background: rgb(9, 13, 58);
-            color: gold;
-            border-radius: 10px;
-            padding: 9px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #161623;
+            flex-wrap: wrap;
             grid-area: box1;
         }
 
@@ -109,35 +110,35 @@
                 display: none;
             }
         }
+
+        /* Card css start */
+        .box1 .card{
+            position: relative;
+            width: 200px;
+            height: 400px;
+            margin: 30px;
+            box-shadow: 20px 20px 50px rgb(0,0,0,0.5);
+        }
+        /* Card css end */
     </style>
     <div class="main">
         <!-- <h1>about page</h1> -->
         <div class="about-main">
             <main>
                 <img src="{% static 'hello.jpg' %}" alt="">
-                <h1>Heading ho hai</h1>
+                <h1>Services</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
                     soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
-                    provident quasi odit id, ipsa ex ipsum eligendi quae enim? Delectus temporibus, repellat quasi quis
-                    veniam magni placeat recusandae dolorem eius sed voluptatibus quo quod corporis reiciendis
-                    voluptatum dolorum eos quia accusantium necessitatibus magnam labore! Error doloribus dolore ducimus
-                    accusamus! Ea repellat debitis rem repudiandae numquam? Saepe, magnam consequuntur? Amet natus
-                    recusandae illo corporis minima mollitia officiis incidunt distinctio vel dolorum, eveniet quis, ad
-                    numquam rem molestiae sapiente eligendi ut. Ab blanditiis nesciunt amet eum eius nemo similique
-                    veritatis consectetur at saepe. Libero doloremque voluptates laboriosam at sequi! Autem facilis
-                    voluptates illum nobis, pariatur magnam debitis nam impedit consequuntur dolore omnis sit in
-                    assumenda vitae nesciunt temporibus cum accusantium iste ullam possimus, incidunt aliquam quidem id!
-                    Iure laudantium facilis mollitia dicta minima ipsa et laborum. Minus architecto at ea explicabo
-                    eaque mollitia facilis beatae laborum maiores quia, corporis sed non a quo nostrum veniam. Inventore
-                    optio reiciendis voluptatem vitae quisquam maxime harum fuga neque quae repellat. Doloremque porro
-                    accusamus veritatis voluptatem architecto! Doloremque quis in facere odio unde! Amet dicta quia
-                    deserunt nostrum perspiciatis!</p>
-                <hr>
+                    provident quasi odit id, ipsa ex.
+                    soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
+                    provident quasi odit id, ipsa ex.
+                <p>
+                    <hr>
             </main>
             <div class="sidebar">
                 <ul>
                     <a href="">
-                        <li>Our Mission</li>
+                        <li>Our Services</li>
                     </a>
                     <a href="">
                         <li>Our Values</li>
@@ -155,17 +156,14 @@
             </div>
 
             <div class="box1">
-                <h2>Our Mission</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
+                <div class="card">
+                    <div class="content">
+                        <h2>01</h2>
+                        <h3>Card One</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti explicabo et necessitatibus fugit nemo libero autem consequuntur accusamus molestiae odio.</p>
+                        <a href="#">Read More</a>
+                    </div>
+                </div>
             </div>
             <div class="box2">
                 <h2>Our Vision</h2>
@@ -193,7 +191,17 @@
                     excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
                     aliquid nulla officia asperiores iure!</p>
             </div>
-
+            <div class="container">
+                <div class="card">
+                    <div class="content">
+                        <h2>01</h2>
+                        <h3>Card one</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quo! Earum voluptatibus
+                            quaerat cupiditate nesciunt harum repellendus libero. Incidunt, amet culpa nesciunt voluptas
+                            autem earum esse ad recusandae libero perferendis!</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- <script>
