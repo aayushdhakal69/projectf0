@@ -12,19 +12,210 @@
 
 <body>
     {% block content %}
+
+
+    <!-- CSS IS HERE -->
     <style>
+        @media (min-width: 768px) {
+
+
+            .main {
+                padding-top: 3.1rem;
+            }
+
+
+        }
+
         .main {
             padding-top: 3.1rem;
         }
     </style>
+
+
+
     <div class="main">
         <!-- <img src="{% static 'hello.jpg' %}" alt=""> -->
         <!-- background: url('/static/wave.png'); -->
-        <h1>Hello k xa milyo ki naii</h1>
     </div>
-    <!-- <script>
 
-    </script> -->
+    <!-- REST HTML CONTENT IS HERE -->
+
+
+
+    <div class="mainContainer">
+        <!-- FIRST DIv SECTION -->
+        <ul class="firstDivSection">
+            <li>
+                <div class="imageBackground">
+                    <h1>The Text Is In Top</h1>
+                </div>
+            </li>
+        </ul>
+
+
+        <!-- SECOND DIV SECTION -->
+        <ul class="cardSection">
+            <li>
+                <div class="cardList">
+
+                    <!-- first card -->
+                    <div class="card">
+                        <div class="imageWithInfo">
+                            <div class="image">
+                                <img src="{% static 'lady.jpg' %}" alt="">
+                            </div>
+                            <div class="nameAndTag">
+                                <h3>Salina Lama</h3>
+                                <h5>Member</h5>
+                            </div>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod repudiandae consequuntur,
+                            recusandae fugiat asperiores eos minima optio eius doloremque ipsum.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
+                            perferendis? Repellendus, voluptatibus similique!</p>
+
+                        <button>Click Here</button>
+                    </div>
+
+                    <!-- second card -->
+                    <div class="card">
+                        <div class="imageWithInfo">
+                            <div class="image">
+                                <img src="{% static 'lady.jpg' %}" alt="">
+                            </div>
+                            <div class="nameAndTag">
+                                <h3>Salina Lama</h3>
+                                <h5>Member</h5>
+                            </div>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod repudiandae consequuntur,
+                            recusandae fugiat asperiores eos minima optio eius doloremque ipsum.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
+                            perferendis? Repellendus, voluptatibus similique!</p>
+
+                        <button>Click Here</button>
+                    </div>
+
+
+
+                    <!-- Fourth Card -->
+
+                    <div class="card">
+                        <div class="imageWithInfo">
+                            <div class="image">
+                                <img src="{% static 'lady.jpg' %}" alt="">
+                            </div>
+                            <div class="nameAndTag">
+                                <h3>Salina Lama</h3>
+                                <h5>Member</h5>
+                            </div>
+                        </div>
+
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod repudiandae consequuntur,
+                            recusandae fugiat asperiores eos minima optio eius doloremque ipsum.</p>
+
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
+                            perferendis? Repellendus, voluptatibus similique!</p>
+
+                        <button>Click Here</button>
+                    </div>
+                </div>
+
+            </li>
+
+
+        </ul>
+
+        <!-- BANNER SECTION IS HERE -->
+        <ul class="bannerSection">
+            <li>
+                <div class="banner">
+                    <h1>This is Banner</h1>
+                    <h3>gaad Guleti Condo Kharani</h3>
+                </div>
+            </LI>
+        </ul>
+
+        <!-- SERVICE SECTION IS HERE -->
+        <ul>
+            <li>
+
+                <div class="serviceList">
+
+                    <div class="service serviceTwo">
+                        <h2>Welcome To Our Service</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, non quos similique enim eius
+                            fuga
+                            quo illum at dolores repudiandae ratione possimus voluptate iste, rem necessitatibus.
+                            Corrupti,
+                            quasi exercitationem soluta inventore doloribus pariatur ratione magnam non laborum, ipsa
+                            dolorum deserunt aliquam illum excepturi fugit cum natus. Ipsa neque cumque necessitatibus.
+                            Vero
+                            dolorem sequi nulla modi laborum earum ipsum assumenda perferendis sint fugiat porro, autem
+                            excepturi itaque nihil. Eveniet aut sit quo perferendis cum fugiat animi, pariatur sunt
+                            fugit
+                            deserunt ducimus ullam velit enim, suscipit nisi, accusantium recusandae expedita libero
+                            vero
+                            laboriosam unde sequi. Magnam, distinctio explicabo perspiciatis omnis nemo tenetur.</p>
+                    </div>
+
+                    <div class="service serviceOne">
+                        <h2>Welcome To Our Service</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, non quos similique enim eius
+                            fuga
+                            quo illum at dolores repudiandae ratione possimus voluptate iste, rem necessitatibus.
+                            Corrupti,
+                            quasi exercitationem soluta inventore doloribus pariatur ratione magnam non laborum, ipsa
+                            dolorum deserunt aliquam illum excepturi fugit cum natus. Ipsa neque cumque necessitatibus.
+                            Vero
+                            dolorem sequi nulla modi laborum earum ipsum assumenda perferendis sint fugiat porro, autem
+                            excepturi itaque nihil. Eveniet aut sit quo perferendis cum fugiat animi, pariatur sunt
+                            fugit
+                            deserunt ducimus ullam velit enim, suscipit nisi, accusantium recusandae expedita libero
+                            vero
+                            laboriosam unde sequi. Magnam, distinctio explicabo perspiciatis omnis nemo tenetur.</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!-- CONCLUSION SECTION IS HERE -->
+        <ul class="conclusionSection">
+            <li>
+                <div class="conclusion">
+                    <h1>Conclusion Ma Chai K Halni ?</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corporis hic quae aliquid, excepturi
+                        vel deleniti culpa maiores unde deserunt quaerat? Obcaecati iste quo, enim at earum incidunt
+                        deserunt possimus esse reiciendis harum veniam laudantium? Dolore culpa fugit facere aperiam non
+                        minima quis fugiat, porro animi nostrum cumque ullam nemo incidunt officia in atque dolorem
+                        delectus sunt illum tempora dolores recusandae repellendus neque ratione? Maxime, aut recusandae
+                        commodi aperiam iure consectetur dolor nemo id, nulla nobis illum? Nihil totam molestias
+                        corrupti, laboriosam doloribus accusamus ducimus minima perferendis fugit velit quos cumque,
+                        esse, delectus earum dicta aliquid sunt harum consequuntur nam. Voluptatem eum corporis tempora
+                        expedita similique velit, deserunt quisquam minima, tempore in veritatis ullam eius reiciendis
+                        corrupti doloribus tenetur voluptatum nostrum! Obcaecati esse sequi inventore aspernatur sint
+                        adipisci. Atque eaque, aut velit reiciendis incidunt illo laborum eligendi rem eius, temporibus
+                        ratione quia quis impedit ipsum nostrum quas aliquam sit odit aperiam ea ullam voluptatibus,
+                        quidem doloribus! Ad eveniet facere id molestiae, minima sed eum sequi odio iure autem ex sit
+                        sint iusto cumque magnam pariatur nulla reprehenderit eius. Facilis, laboriosam odit voluptatum
+                        perferendis harum eius dolorem eaque nam tenetur a error id hic repudiandae adipisci eum non
+                        ipsum dicta nisi eligendi?</p>
+                </div>
+            </li>
+        </ul>
+
+
+
+
+    </div>
+
+
+
+    <!-- SCRIPT IS HERE -->
     {% endblock %}
 
 </body>
