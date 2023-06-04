@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font Awosome is Here -->
+    <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
+
+    <title>Khetalo.com</title>
+
+    {% block body %}
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            list-style: none !important;
+            text-decoration: none !important;
+        }
+
+        /* This will apply for all the text color of a  */
+        .nav_a,
+        i {
+            color: rgb(185, 227, 184);
+        }
+
+        .logo a,
+        i {
+            font-weight: bolder;
+            font-size: larger;
+        }
+
+        .navbar {
+            position: relative;
+            z-index: 1111;
+        }
+
+        /* This will apply for upto 768 px deveoce only */
+        @media (max-width: 768px) {
+            .logo {
+                border-bottom: 1px solid gray;
+
+            }
+
+            .navList {
+                background: #003e29;
+            }
+
+            .navbar {
+                width: 100%;
+                height: 5vh;
+            }
+
+            .logo {
+                float: left;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 5vh;
+                width: 100%;
+                position: fixed;
+                background-color: rgb(10, 43, 29);
+
+
+            }
+
+            .navList a {
+                display: flex;
+                gap: 0 1rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .navList {
+                float: right;
+                display: flex;
+                flex-direction: column;
+                gap: 0 1rem;
+                height: 95vh;
+                position: fixed;
+                top: 5vh;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+                gap: 2rem 0;
+                left: -100%;
+                transition: all .5s;
+                z-index: 999;
+                background-color: rgb(10, 43, 29);
+
+
+            }
+
+            /* hiding croos at initially */
+            .cross {
+                display: none;
+            }
+
+            .menu {
+                row-gap: 20px;
+            }
+        }
+
+        /* this will apply after 768px device only */
+        @media(min-width: 768px) {
+
+            /* hiding hamburger and cross in large device */
+            .cross,
+            .hamBurger {
+                display: none;
+            }
+
+            .navbar {
+                display: flex;
+                justify-content: space-between;
+                padding: 0 5%;
+                height: 7vh;
+                align-items: center;
+                border-bottom: 1px solid gray;
+                position: fixed;
+                width: 100%;
+                background-color: rgb(10, 43, 29);
+                z-index: 999;
+            }
+
+            .navList {
+                display: flex;
+                gap: 0 1rem;
+            }
+
+            .navList a {
+                padding: .2rem 2rem;
+                transition: .3s;
+                display: flex;
+                gap: 0 1rem;
+            }
+
+            .navList a:hover,
+            a.active {
+                border-radius: 1rem;
+                background: rgb(124, 172, 126);
+            }
+        }
+
+        .main_footer {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            z-index: -999;
+        }
+
+        footer {
+            margin-top: 17rem;
+            position: relative;
+            width: 100%;
+            background: #003e29;
+            padding: 20px 50px;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        footer .social_icons,
+        footer .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+
+        footer .social_icons li,
+        footer .menu li {
+            list-style: none;
+        }
+
+        footer .social_icons li a {
+            font-size: 2em;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
+
+        footer .social_icons li a:hover {
+            transform: translateY(-10px);
+        }
+
+        footer .menu li a {
+            font-size: 1.2em;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            text-decoration: none;
+            opacity: 0.75;
+        }
+
+        footer .menu li a:hover {
+            opacity: 1;
+            color: hotpink;
+        }
+
+        footer p {
+            color: #fff;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        footer .wave {
+            position: absolute;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: url('/static/wave.png');
+            background-size: 1000px 100px;
+        }
+
+        footer .waves #wave1 {
+            z-index: -1;
+            opacity: 1;
+            bottom: 0;
+            animation: animateWave 4s linear infinite;
+        }
+
+        footer .waves #wave2 {
+            z-index: -1;
+            opacity: 0.5;
+            bottom: 10px;
+            animation: animateWave_2 4s linear infinite;
+        }
+
+        footer .waves #wave3 {
+            z-index: -1;
+            opacity: .2;
+            bottom: 15px;
+            animation: animateWave_3 3s linear infinite;
+        }
+
+        footer .waves #wave1 {
+            z-index: -1;
+            opacity: .7;
+            bottom: 20px;
+            animation: animateWave_4 3s linear infinite;
+        }
+
+        @keyframes animateWave {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+
+        @keyframes animateWave_2 {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+
+        @keyframes animateWave_3 {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+
+        @keyframes animateWave_4 {
+            0% {
+                background-position-x: -1000px;
+            }
+
+            100% {
+                background-position-x: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <a href="#" title="khetalo.com" class="nav_a">Khetalo.com</a>
+
+            <!-- Hamburger -->
+            <i class="fa-solid fa-bars hamBurger"></i>
+            <i class="fa-solid fa-xmark cross"></i>
+        </div>
+
+        <ul class="navList">
+            <li>
+
+                <a href="#" class="active nav_a" title="home">
+                    <i class="fa-solid fa-house"></i>
+                    Home</a>
+            </li>
+
+            <li>
+                <a href="#" title="about" class="nav_a">
+                    <i class="fa-solid fa-people-roof"></i>
+                    About</a>
+            </li>
+
+            <li>
+                <a href="#" title="service" class="nav_a">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    Services</a>
+            </li>
+
+            <li>
+                <a href="#" title="contact" class="nav_a">
+                    <i class="fa-solid fa-phone"></i>
+                    Contact</a>
+            </li>
+        </ul>
+
+
+
+        <!-- hmaburger is here -->
+
+    </div>
+    {% block content %} {% endblock %}
+    <div class="main_footer">
+        <footer>
+            <div class="waves">
+                <div class="wave" id="wave1"></div>
+                <div class="wave" id="wave2"></div>
+                <div class="wave" id="wave3"></div>
+                <div class="wave" id="wave4"></div>
+            </div>
+            <ul class="social_icons">
+                <li><a href="#"><i class="fa-brands fa-facebook fa-beat-fade"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-instagram fa-beat-fade"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter fa-beat-fade"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-discord fa-beat-fade"></i></a></li>
+            </ul>
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Members</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+            <p>2023 khetalo.com | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <!-- Your Script is here -->
+    <script>
+
+        const navList = document.querySelector('.navList')
+        const hamBurger = document.querySelector('.hamBurger');
+        hamBurger.addEventListener('click', function () {
+            navList.style.left = '0';
+            hamBurger.style.display = 'none';
+            cross.style.display = 'block';
+        })
+        const cross = document.querySelector('.cross');
+        cross.addEventListener('click', function () {
+            navList.style.left = "-100%"
+            hamBurger.style.display = 'flex';
+            cross.style.display = 'none';
+        })
+    </script>
+</body>
+{% endblock %}
+
+</html>
