@@ -35,7 +35,7 @@
         }
 
         .navbar {
-            position: relative;
+            position: fixed;
             z-index: 1111;
         }
 
@@ -147,6 +147,7 @@
         }
 
         .main_footer {
+            position: relative;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
@@ -308,25 +309,25 @@
         <ul class="navList">
             <li>
 
-                <a href="#" class="active nav_a" title="home">
+                <a href="/" class="active nav_a" title="home">
                     <i class="fa-solid fa-house"></i>
                     Home</a>
             </li>
 
             <li>
-                <a href="#" title="about" class="nav_a">
+                <a href="/about" title="about" class="nav_a">
                     <i class="fa-solid fa-people-roof"></i>
                     About</a>
             </li>
 
             <li>
-                <a href="#" title="service" class="nav_a">
+                <a href="/services" title="service" class="nav_a">
                     <i class="fa-solid fa-handshake-angle"></i>
                     Services</a>
             </li>
 
             <li>
-                <a href="#" title="contact" class="nav_a">
+                <a href="/contact" title="contact" class="nav_a">
                     <i class="fa-solid fa-phone"></i>
                     Contact</a>
             </li>
@@ -354,10 +355,10 @@
             </ul>
             <ul class="menu">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Services</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
                 <li><a href="#">Members</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="/contact">Contact</a></li>
             </ul>
             <p>2023 khetalo.com | All Rights Reserved</p>
         </footer>
