@@ -16,12 +16,162 @@
         .main {
             padding-top: 3.1rem;
         }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            list-style: none !important;
+            text-decoration: none !important;
+        }
+
+        .personPageContainer {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: .2rem;
+            background: linear-gradient(#FC0FC0, #4743EF);
+            position: relative;
+        }
+
+        .personPageContainer ul {
+            width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            /* Glass Morphism */
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            position: fixed;
+        }
+
+
+
+        .personPageContainer .personInformation {
+            width: 60%;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem 0;
+            padding: 1rem;
+            justify-content: center;
+
+            /* noted */
+            position: relative;
+            left: 10rem;
+
+
+        }
+
+
+        .personInformation p,
+        h1,
+        span,
+        label {
+            color: white;
+        }
+
+        .personInformation .item {
+            color: #f7ac44;
+        }
+
+        .item {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            text-align: justify;
+        }
+
+        .personPng {
+            position: relative;
+            left: 12rem;
+        }
+
+        .personPng .image {
+            display: flex;
+        }
+
+        .personPng .image img {
+
+            width: 100%;
+
+        }
+
+        @media(max-width:767px) {
+            .personPageContainer {
+                width: 100%;
+            }
+
+            .personPageContainer ul {
+                display: flex;
+                flex-direction: column-reverse;
+                height: 100vh;
+                gap: 1rem;
+                width: 100%;
+            }
+
+
+            .personPageContainer .personInformation {
+                width: 100%;
+                position: static;
+                left: 0;
+
+
+            }
+
+            .item {
+                gap: 1rem;
+            }
+
+            .personPng {
+                position: static;
+                left: 0;
+            }
+        }
     </style>
     <div class="main">
         <!-- <img src="{% static 'hello.jpg' %}" alt=""> -->
         <!-- background: url('/static/wave.png'); -->
-        <h1>Person1 running</h1>
+
+
+
+        <div class="personPageContainer">
+            <ul>
+                <li class="personInformation">
+                    <header>
+                        <h1>What is Title ?</h1>
+                    </header>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit, dicta.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa, non harum facilis modi facere est
+                        tempore
+                        repellat quod architecto voluptates.
+                    </p>
+                    <div class="item">
+                        <h3>Name:Jeshik Pradhan</h3>
+                        <h3>Dick Size: 6.5 Inch</h3>
+                        <h3>Age:23</h3>
+                        <h3>Speciality:Fast af</h3>
+                        <h3>Sex: Male</h3>
+                        <h3>Height:6.5 Feet</h3>
+
+                    </div>
+                </li>
+
+                <li class="personPng">
+                    <div class="image">
+                        <img src="{%static 'person.png'%}" alt="">
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
+
     <!-- <script>
 
     </script> -->
