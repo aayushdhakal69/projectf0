@@ -31,3 +31,6 @@ def persontwo(request):
 
 def personthree(request):
     return render(request, "personthree.html")
+
+def personlist(request):
+    return render(request, "personlist.html")

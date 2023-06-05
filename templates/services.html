@@ -13,10 +13,6 @@
 <body>
     {% block content %}
     <style>
-        /*         footer {
-            margin-top: 36rem;
-        } */
-
         .main {
             padding-top: 3.1rem;
         }
@@ -25,13 +21,13 @@
             display: grid;
             /* height: 100vh; */
             grid-template-columns: .6fr 1fr 1fr 1fr;
-            grid-template-rows: 1.5fr .3fr;
+            grid-template-rows: .5fr .3fr;
             grid-template-areas:
                 "sidebar main main main"
                 "sidebar box1 box2 box3";
-            grid-gap: 1rem;
-            /* text-align: center;
-            font-size: 1.5rem; */
+            grid-gap: .8rem;
+            text-align: center;
+            font-size: 1rem;
         }
 
         main {
@@ -60,10 +56,10 @@
         }
 
         .box1 {
+
             display: flex;
             justify-content: center;
             align-items: center;
-            background: #161623;
             flex-wrap: wrap;
             grid-area: box1;
         }
@@ -80,25 +76,29 @@
         }
 
         .box2 {
-            background: rgb(9, 13, 58);
-            color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             border-radius: 10px;
-            padding: 9px;
+            /* padding: 9px; */
             grid-area: box2;
         }
 
         .box3 {
-            background: rgb(9, 13, 58);
-            color: gold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
             border-radius: 10px;
-            padding: 9px;
+            /* padding: 9px; */
             grid-area: box3;
         }
 
         @media only screen and (max-width: 640px) {
             .about-main {
                 grid-template-columns: 1fr;
-                grid-template-rows: 2fr .4fr .4fr .4fr;
+                grid-template-rows: .4fr .4fr .4fr .4fr;
                 grid-template-areas:
                     "main"
                     "box1"
@@ -112,13 +112,68 @@
         }
 
         /* Card css start */
-        .box1 .card{
+        .card {
             position: relative;
-            width: 200px;
+            width: 300px;
             height: 400px;
-            margin: 30px;
-            box-shadow: 20px 20px 50px rgb(0,0,0,0.5);
+            box-shadow: 20px 20px 50px rgb(0, 0, 0, 0.2);
+            border-radius: 15px;
+            background: rgb(9, 13, 58);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+            border-left: 1px solid rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(5px);
+            margin-bottom: 1rem;
         }
+
+        .card .content {
+            padding: 20px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .card:hover .content {
+            transform: translateY(0px);
+            opacity: 1;
+        }
+
+        .card .content h2 {
+            position: absolute;
+            top: -60px;
+            right: 50px;
+            font-size: 4em;
+            color: rgba(255, 255, 255, 0.05);
+            /* pointer-events: none; */
+        }
+
+        .card .content h3 {
+            font-size: 1.8em;
+            color: #fff;
+            z-index: 1;
+        }
+
+        .card .content p {
+            font-size: 1em;
+            color: #fff;
+            font-weight: 300;
+        }
+
+        .card .content a {
+            position: relative;
+            display: inline-block;
+            padding: 8px 20px;
+            margin-top: 15px;
+            background: #fff;
+            color: #000;
+            border-radius: 20px;
+            text-decoration: none;
+            font-weight: 500;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2)
+        }
+
         /* Card css end */
     </style>
     <div class="main">
@@ -127,11 +182,17 @@
             <main>
                 <img src="{% static 'hello.jpg' %}" alt="">
                 <h1>Services</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
+                <p>
+                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
                     soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
                     provident quasi odit id, ipsa ex.
                     soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
-                    provident quasi odit id, ipsa ex.
+                    provident quasi odit id, ipsa ex. -->
+                    We can give great services for you. As you know we are first agency or company to work in this field
+                    in Nepal. So, there is no doubt in our service, you can expect a good orgasm for our single boys and
+                    girls.
+                    If you are not able to make a child and having problems, unsatisfaction with your relationship, you
+                    can hire us. We can provide a hansome/beautiful member for you. Thank yoy! Have a great day.
                 <p>
                     <hr>
             </main>
@@ -158,47 +219,54 @@
             <div class="box1">
                 <div class="card">
                     <div class="content">
-                        <h2>01</h2>
-                        <h3>Card One</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Adipisci corrupti explicabo et necessitatibus fugit nemo libero autem consequuntur accusamus molestiae odio.</p>
-                        <a href="#">Read More</a>
+                        <h2>CHAK</h2>
+                        <h3>Anal Service</h3>
+                        <p>Our memebers is okey with anal sex and have a great stamina</p>
+                        <a href="/contact">Contact Us</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>CONDO</h2>
+                        <h3>24/7 Service</h3>
+                        <p>We are able to give 24/7 service and you can call us any time.</p>
+                        <a href="/contact">Contact Us</a>
                     </div>
                 </div>
             </div>
             <div class="box2">
-                <h2>Our Vision</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
-            </div>
-            <div class="box3">
-                <h2>Our Values</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
-            </div>
-            <div class="container">
                 <div class="card">
                     <div class="content">
-                        <h2>01</h2>
-                        <h3>Card one</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, quo! Earum voluptatibus
-                            quaerat cupiditate nesciunt harum repellendus libero. Incidunt, amet culpa nesciunt voluptas
-                            autem earum esse ad recusandae libero perferendis!</p>
+                        <h2>LADO</h2>
+                        <h3>Big Dicks</h3>
+                        <p>As a company we only hire members have bigger dick size and they can give great orgasm.</p>
+                        <a href="/contact">Hire Khetalo</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>VIRGIN</h2>
+                        <h3>Contraseptips</h3>
+                        <p>Our members use durable and beliveable sex devices if according to your needs.</p>
+                        <a href="/contact">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            <div class="box3">
+                <div class="card">
+                    <div class="content">
+                        <h2>PORN</h2>
+                        <h3>Great Stamina</h3>
+                        <p>Our memebers are inspired from cristiano ronaldo so they are good with stamina.</p>
+                        <a href="/contact">Contact Us</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <h2>PUSSY</h2>
+                        <h3>Segrogacy</h3>
+                        <p>We also can provide a agent for your child of you want to add your gene in child.</p>
+                        <a href="/contact">Contact Us</a>
                     </div>
                 </div>
             </div>
