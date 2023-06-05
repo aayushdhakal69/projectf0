@@ -105,8 +105,18 @@
                     "box3";
             }
 
+            .about-main {
+                padding-right: 2spx;
+            }
+
             .sidebar {
                 display: none;
+            }
+        }
+
+        @media only screen and (min-width: 640px) {
+            .about-main {
+                padding-right: 60px;
             }
         }
     </style>
@@ -133,6 +143,32 @@
                     accusamus veritatis voluptatem architecto! Doloremque quis in facere odio unde! Amet dicta quia
                     deserunt nostrum perspiciatis!</p>
                 <hr>
+                <div class="mapouter">
+                    <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+                            marginheight="0" marginwidth="0"
+                            src="https://maps.google.com/maps?width=690&amp;height=335&amp;hl=en&amp;q=Hetauda&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                            href="https://capcuttemplate.org/">Capcut Templates</a></div>
+                    <style>
+                        .mapouter {
+                            grid-area: map;
+                            position: relative;
+                            text-align: right;
+                            width: 100%;
+                            height: 335px;
+                        }
+
+                        .gmap_canvas {
+                            overflow: hidden;
+                            background: none !important;
+                            width: 100%;
+                            height: 335px;
+                        }
+
+                        .gmap_iframe {
+                            height: 335px !important;
+                        }
+                    </style>
+                </div>
             </main>
             <div class="sidebar">
                 <ul>
