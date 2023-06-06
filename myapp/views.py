@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Contact
 
 # Create your views here.
 
@@ -13,6 +14,17 @@ def about(request):
 
 
 def contact(request):
+    if request.method == "POST":
+        name = request.POST["name"]
+        address = request.POST["address"]
+        phone = request.POST["phone"]
+        email = request.POST["email"]
+        content = request.POST["content"]
+        # print(name, address, phone, email, content)
+        contact = Contact(
+            name=name, address=address, phone=phone, email=email, content=content
+        )
+        contact.save()
     return render(request, "contact.html")
 
 
@@ -31,6 +43,7 @@ def persontwo(request):
 
 def personthree(request):
     return render(request, "personthree.html")
+
 
 def personlist(request):
     return render(request, "personlist.html")

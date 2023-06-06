@@ -26,13 +26,14 @@
         }
 
         .personPageContainer {
+            overflow-x: hidden;
             width: 100%;
-            height: 100vh;
+            /* height: 100vh; */
             display: flex;
             align-items: center;
             justify-content: center;
             padding: .2rem;
-            background: linear-gradient(#FC0FC0, #4743EF);
+            /* background: linear-gradient(#FC0FC0, #4743EF); */
             position: relative;
         }
 
@@ -49,7 +50,8 @@
             -webkit-backdrop-filter: blur(4px);
             border-radius: 10px;
             border: 1px solid rgba(255, 255, 255, 0.18);
-            position: fixed;
+            position: relative;
+            background: linear-gradient(#FC0FC0, #4743EF);
         }
 
 

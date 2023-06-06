@@ -89,6 +89,7 @@
         }
 
         button {
+            cursor: pointer;
             background: #e6890b;
             width: 100px;
             border: none;
@@ -159,29 +160,30 @@
                         khetalo upalabdha garaune
                         xau. Tesaile tala ko form bharnu hola, Dhanyabad!</p>
                     <h3>Enter Your Details</h3>
-                    <form action="">
+                    <form action="/contact/" method="post">
+                        {% csrf_token %}
                         <div class="input-row">
                             <div class="input-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Aayush Dhakal">
+                                <input type="text" placeholder="Aayush Dhakal" name="name">
                             </div>
                             <div class="input-group">
                                 <label>Address</label>
-                                <input type="text" placeholder="Hetauda">
+                                <input type="text" placeholder="Hetauda" name="address">
                             </div>
                         </div>
                         <div class="input-row">
                             <div class="input-group">
                                 <label>Phone</label>
-                                <input type="phone" placeholder="9800000000">
+                                <input type="phone" placeholder="9800000000" name="phone">
                             </div>
                             <div class="input-group">
                                 <label>Email</label>
-                                <input type="email" placeholder="abcd@gmail.com">
+                                <input type="email" placeholder="abcd@gmail.com" name="email">
                             </div>
                         </div>
                         <label>Message</label>
-                        <textarea rows="5" placeholder="Your Message"></textarea>
+                        <textarea rows="5" placeholder="Your Message" name="content"></textarea>
 
                         <button type="submit">Submit</button>
                     </form>
