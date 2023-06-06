@@ -29,4 +29,5 @@ urlpatterns = [
     path("personthree/", views.personthree, name="personthree"),
     # personlist
     path("personlist/", views.personlist, name="personlist"),
+    path("test/", views.test, name="test"),
 ]

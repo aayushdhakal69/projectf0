@@ -32,7 +32,11 @@ def services(request):
     return render(request, "services.html")
 
 
-# Persons Particular Page
+# Persons Particular and person list Page
+def personlist(request):
+    return render(request, "personlist.html")
+
+
 def personone(request):
     return render(request, "personone.html")
 
@@ -45,5 +49,6 @@ def personthree(request):
     return render(request, "personthree.html")
 
 
-def personlist(request):
-    return render(request, "personlist.html")
+# for testing only in developing mode
+def test(request):
+    return render(request, "donttouch.html")
