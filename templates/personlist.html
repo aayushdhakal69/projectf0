@@ -71,48 +71,15 @@
         .personListContainer .div1 .listBox .box {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: end;
             align-items: center;
             border-radius: .5rem;
-        }
-
-        .personListContainer .div1 .listBox .box:nth-of-type(1) {
-            background-image: url('/static/amit.jpg');
+            /*muniko*/
             background-repeat: no-repeat;
             background-position: center center;
             background-size: cover;
             filter: brightness(70%);
-
         }
-
-        .personListContainer .div1 .listBox .box:nth-of-type(2) {
-            background-image: url('/static/baba.jpg');
-
-            background-repeat: no-repeat;
-            background-position: center center;
-            filter: brightness(70%);
-            background-size: cover;
-
-        }
-
-        .personListContainer .div1 .listBox .box:nth-of-type(3) {
-            background-image: url('/static/sauta.jpg');
-            background-repeat: no-repeat;
-            background-position: center;
-            filter: brightness(70%);
-            background-size: cover;
-
-        }
-
-        .personListContainer .div1 .listBox .box:nth-of-type(4) {
-            background-image: url('/static/pudke.jpeg');
-            background-repeat: no-repeat;
-            background-position: center center;
-            background-size: cover;
-
-            filter: brightness(70%);
-        }
-
 
         .hamBox {
             text-align: center;
@@ -143,7 +110,6 @@
             padding: 0 .5rem;
             justify-content: space-between;
             display: flex;
-            /* height: 90vh; */
             flex-direction: column;
             display: none;
         }
@@ -168,7 +134,6 @@
         #hamClick,
         #crossClick {
             background: red;
-            /* border: 1px solid cyan; */
             padding: 8px 10px;
             border-radius: .4rem;
         }
@@ -197,8 +162,6 @@
                 /* display flex garnu parxqa person list nikalna  */
             }
 
-
-
             .div2 {
                 display: none;
                 width: 100%;
@@ -214,76 +177,29 @@
         }
     </style>
     <div class="main">
-        <!-- <img src="{% static 'hello.jpg' %}" alt=""> -->
-        <!-- background: url('/static/wave.png'); -->
-
         <div class="personListContainer">
             <div class="div1">
                 <div class="listBox">
-                    <div class="box">
-                        <h1>Pradip Moktan</h1>
-                        <p>Lorem, ipsum. Lorem ipsum dolor sit amet.</p>
-                        <button class="personListButton">View</button>
+                    {% for post in allPosts %}
+                    <div class="box" style="background-image: url(/media/{{post.image}});">
+                        <h1>{{post.name}}</h1>
+                        <p>{{post.content}}</p>
+                        <button class="personListButton">
+                            <a href="/{{post.slug}}">View</a>
+                        </button>
                     </div>
-                    <div class="box">
-                        <h1>Pradip Moktan</h1>
-                        <p>Lorem, ipsum. Lorem ipsum dolor sit amet.</p>
-                        <button class="personListButton">View</button>
-                    </div>
-                    <div class="box">
-                        <h1>Pradip Moktan</h1>
-                        <p>Lorem, ipsum. Lorem ipsum dolor sit amet.</p>
-                        <button class="personListButton">View</button>
-                    </div>
-                    <div class="box">
-                        <h1>Pradip Moktan</h1>
-                        <p>Lorem, ipsum. Lorem ipsum dolor sit amet.</p>
-                        <button class="personListButton">View</button>
-                    </div>
-
-
-
-
+                    {% endfor %}
                 </div>
-
-
             </div>
-
-
-
             <div class="div2">
                 <div class="titleBox">
-
-                    <div class="box">
-                        <h2>Title One</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque.</p>
-                    </div>
-                    <div class="box">
-                        <h2>Title One</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque.</p>
-                    </div>
-                    <div class="box">
-                        <h2>Title One</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque.</p>
-                    </div>
-                    <div class="box">
-                        <h2>Title One</h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea, itaque.</p>
-                    </div>
-
                 </div>
-                <!-- <div class="titleCrossBox">
-                    X
-                </div> -->
             </div>
             <div class="hamBox">
                 <i class="fa-solid fa-bars" id="hamClick"></i>
                 <i class="fa-solid fa-circle-xmark" id="crossClick"></i>
             </div>
         </div>
-
-
-
     </div>
     <script>
 

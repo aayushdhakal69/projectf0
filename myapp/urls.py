@@ -24,10 +24,10 @@ urlpatterns = [
     path("contact/", views.contact, name="contact"),
     path("services/", views.services, name="services"),
     # Person urls
-    path("personone/", views.personone, name="personone"),
-    path("persontwo/", views.persontwo, name="persontwo"),
-    path("personthree/", views.personthree, name="personthree"),
-    # personlist
     path("personlist/", views.personlist, name="personlist"),
+    path("<str:slug>/", views.personone, name="personone"),
+    # path("persontwo/", views.persontwo, name="persontwo"),
+    # path("personthree/", views.personthree, name="personthree"),
+    # personlist
     path("test/", views.test, name="test"),
 ]

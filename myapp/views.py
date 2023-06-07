@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Contact
+from .models import Contact, Member, Allperson
 
 # Create your views here.
 
@@ -34,11 +34,16 @@ def services(request):
 
 # Persons Particular and person list Page
 def personlist(request):
-    return render(request, "personlist.html")
+    allPosts = Allperson.objects.all()
+    # print(allPosts)
+    context = {"allPosts": allPosts}
+    return render(request, "personlist.html", context)
 
 
-def personone(request):
-    return render(request, "personone.html")
+def personone(request, slug):
+    post = Allperson.objects.filter(slug=slug).first()
+    context = {"post": post}
+    return render(request, "personone.html", context)
 
 
 def persontwo(request):
