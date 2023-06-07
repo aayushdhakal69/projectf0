@@ -18,10 +18,20 @@ class Contact(models.Model):
 
 # Table for Personlist
 class Allperson(models.Model):
+    GENDER_CHOICES = (
+        ("M", "Male"),
+        ("F", "Female"),
+        ("O", "Others"),
+    )
     sno = models.AutoField(primary_key=True)
     name = models.CharField(max_length=40)
+    age = models.CharField(max_length=3, default="21")
     slug = models.CharField(max_length=130, default="this-s")
     image = models.ImageField(upload_to="myapp/images", default="upload-image")
+    sex = models.CharField(max_length=1, choices=GENDER_CHOICES, default="M")
+    dsize = models.CharField(max_length=4, default="5.5")
+    height = models.CharField(max_length=4, default="5.5")
+    speciality = models.CharField(max_length=30, default="Speedy")
     content = models.TextField()
 
     def __str__(self):
