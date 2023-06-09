@@ -12,19 +12,19 @@
 
 <body>
     {% block content %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         /*         footer {
             margin-top: 36rem;
         } */
-
-        .main {
-            padding-top: 3.1rem;
+        * {
+            scroll-behavior: smooth;
         }
 
         .about-main {
             display: grid;
             /* height: 100vh; */
-            grid-template-columns: .6fr 1fr 1fr 1fr;
+            grid-template-columns: .9fr 1fr 1fr 1fr;
             grid-template-rows: 1.5fr .3fr;
             grid-template-areas:
                 "sidebar main main main"
@@ -44,19 +44,27 @@
             width: 100%;
             height: 60vh;
             object-fit: cover;
-            object-position: 25% 25%;
+            /* object-position: 25% 25%; */
         }
 
         .sidebar {
             margin-top: 10px;
             grid-area: sidebar;
             display: flex;
-            justify-content: center;
+            /* justify-content: center; */
+            align-items: center;
+            flex-direction: column;
         }
 
         .sidebar ul li {
             font-weight: bold;
             padding: 3px;
+        }
+
+        .box1,
+        .box2,
+        .box3 {
+            margin-top: 1rem;
         }
 
         .box1 {
@@ -119,118 +127,270 @@
                 padding-right: 60px;
             }
         }
+
+        /* Sidebar cards css start */
+        .wrapper {
+            padding: 30px 0;
+            /* min-height: 100vh; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: auto;
+            /* background-color: red; */
+        }
+
+        .container {
+            height: 333px;
+            width: 250px;
+            padding: 12px;
+            position: relative;
+            background: linear-gradient(#048359 50%, #1e202b 50%) 0 100% no-repeat;
+            background-size: 100% 200%;
+            transition: 0.7s;
+            overflow: hidden;
+        }
+
+        .img-wrapper {
+            height: 65%;
+            width: 100%;
+            position: relative;
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .container:hover {
+            background-position: 0 0;
+        }
+
+        .details {
+            position: absolute;
+            background-color: #ffffff;
+            color: #000000;
+            width: 80%;
+            text-align: center;
+            padding: 10px 0;
+            bottom: 10px;
+            margin: auto;
+            left: 0;
+            right: 0;
+            transition: 0.7s;
+        }
+
+        h3,
+        h5 {
+            font-family: "Poppins", sans-serif;
+            font-weight: 500;
+        }
+
+        h3 {
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        h5 {
+            font-size: 12px;
+        }
+
+        .social-icons {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin: 10px 0 5px 0;
+        }
+
+        .container:hover .details {
+            bottom: 30px;
+        }
+
+        .img-wrapper:after {
+            position: absolute;
+            content: "";
+            height: 100%;
+            width: 100%;
+            background-color: #000000;
+            top: 0;
+            left: 0;
+            opacity: 0;
+            transition: 0.7s;
+        }
+
+        .container:hover .img-wrapper:after {
+            opacity: 0.5;
+        }
+
+        i:hover {
+            color: #003e29;
+            cursor: pointer;
+        }
+
+        @media screen and (min-width: 992px) {
+            .wrapper {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+            }
+
+            .container {
+                height: 333px;
+                width: 280px;
+                padding: 15px;
+            }
+        }
+
+        /* sidebar css ends */
     </style>
-    <div class="main">
-        <!-- <h1>about page</h1> -->
-        <div class="about-main">
-            <main>
-                <img src="{% static 'hello.jpg' %}" alt="">
-                <h1>Heading ho hai</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
-                    soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
-                    provident quasi odit id, ipsa ex ipsum eligendi quae enim? Delectus temporibus, repellat quasi quis
-                    veniam magni placeat recusandae dolorem eius sed voluptatibus quo quod corporis reiciendis
-                    voluptatum dolorum eos quia accusantium necessitatibus magnam labore! Error doloribus dolore ducimus
-                    accusamus! Ea repellat debitis rem repudiandae numquam? Saepe, magnam consequuntur? Amet natus
-                    recusandae illo corporis minima mollitia officiis incidunt distinctio vel dolorum, eveniet quis, ad
-                    numquam rem molestiae sapiente eligendi ut. Ab blanditiis nesciunt amet eum eius nemo similique
-                    veritatis consectetur at saepe. Libero doloremque voluptates laboriosam at sequi! Autem facilis
-                    voluptates illum nobis, pariatur magnam debitis nam impedit consequuntur dolore omnis sit in
-                    assumenda vitae nesciunt temporibus cum accusantium iste ullam possimus, incidunt aliquam quidem id!
-                    Iure laudantium facilis mollitia dicta minima ipsa et laborum. Minus architecto at ea explicabo
-                    eaque mollitia facilis beatae laborum maiores quia, corporis sed non a quo nostrum veniam. Inventore
-                    optio reiciendis voluptatem vitae quisquam maxime harum fuga neque quae repellat. Doloremque porro
-                    accusamus veritatis voluptatem architecto! Doloremque quis in facere odio unde! Amet dicta quia
-                    deserunt nostrum perspiciatis!</p>
-                <hr>
-                <div class="mapouter">
-                    <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
-                            marginheight="0" marginwidth="0"
-                            src="https://maps.google.com/maps?width=690&amp;height=335&amp;hl=en&amp;q=Hetauda&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
-                            href="https://capcuttemplate.org/">Capcut Templates</a></div>
-                    <style>
-                        .mapouter {
-                            grid-area: map;
-                            position: relative;
-                            text-align: right;
-                            width: 100%;
-                            height: 335px;
-                        }
+    <!-- <h1>about page</h1> -->
+    <div class="about-main">
+        <main>
+            <img src="{% static 'banner.jpg' %}" alt="">
+            <h1>Heading ho hai</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
+                soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
+                provident quasi odit id, ipsa ex ipsum eligendi quae enim? Delectus temporibus, repellat quasi quis
+                veniam magni placeat recusandae dolorem eius sed voluptatibus quo quod corporis reiciendis
+                voluptatum dolorum eos quia accusantium necessitatibus magnam labore! Error doloribus dolore ducimus
+                accusamus! Ea repellat debitis rem repudiandae numquam? Saepe, magnam consequuntur? Amet natus
+                recusandae illo corporis minima mollitia officiis incidunt distinctio vel dolorum, eveniet quis, ad
+                numquam rem molestiae sapiente eligendi ut. Ab blanditiis nesciunt amet eum eius nemo similique
+                veritatis consectetur at saepe. Libero doloremque voluptates laboriosam at sequi! Autem facilis
+                voluptates illum nobis, pariatur magnam debitis nam impedit consequuntur dolore omnis sit in
+                assumenda vitae nesciunt temporibus cum accusantium iste ullam possimus, incidunt aliquam quidem id!
+                Iure laudantium facilis mollitia dicta minima ipsa et laborum. Minus architecto at ea explicabo
+                eaque mollitia facilis beatae laborum maiores quia, corporis sed non a quo nostrum veniam. Inventore
+                optio reiciendis voluptatem vitae quisquam maxime harum fuga neque quae repellat. Doloremque porro
+                accusamus veritatis voluptatem architecto! Doloremque quis in facere odio unde! Amet dicta quia
+                deserunt nostrum perspiciatis!</p>
+            <hr>
+            <div class="mapouter">
+                <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
+                        marginheight="0" marginwidth="0"
+                        src="https://maps.google.com/maps?width=690&amp;height=335&amp;hl=en&amp;q=Hetauda&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe><a
+                        href="https://capcuttemplate.org/">Capcut Templates</a></div>
+                <div id="mission"></div>
+                <style>
+                    .mapouter {
+                        grid-area: map;
+                        position: relative;
+                        text-align: right;
+                        width: 100%;
+                        height: 335px;
+                    }
 
-                        .gmap_canvas {
-                            overflow: hidden;
-                            background: none !important;
-                            width: 100%;
-                            height: 335px;
-                        }
+                    .gmap_canvas {
+                        overflow: hidden;
+                        background: none !important;
+                        width: 100%;
+                        height: 335px;
+                    }
 
-                        .gmap_iframe {
-                            height: 335px !important;
-                        }
-                    </style>
+                    .gmap_iframe {
+                        height: 335px !important;
+                    }
+                </style>
+            </div>
+        </main>
+
+        <div class="sidebar">
+            <ul>
+                <a href="#mission">
+                    <li>Our Mission</li>
+                </a>
+                <a href="#mission">
+                    <li>Our Values</li>
+                </a>
+                <a href="#mission">
+                    <li>Our Vision</li>
+                </a>
+                <a href="/contact">
+                    <li>Contact Us</li>
+                </a>
+                <a href="">
+                    <li>Developers</li>
+                </a>
+            </ul>
+            <div class="wrapper">
+                <div class="container">
+                    <div class="img-wrapper"><img src="{% static 'sauta.jpg' %}" /></div>
+                    <div class="details">
+                        <h3>Ashok Giri</h3>
+                        <h5>Khetalo</h5>
+                        <div class="social-icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
                 </div>
-            </main>
-            <div class="sidebar">
-                <ul>
-                    <a href="">
-                        <li>Our Mission</li>
-                    </a>
-                    <a href="">
-                        <li>Our Values</li>
-                    </a>
-                    <a href="">
-                        <li>Our Vision</li>
-                    </a>
-                    <a href="">
-                        <li>Contact Us</li>
-                    </a>
-                    <a href="">
-                        <li>Developers</li>
-                    </a>
-                </ul>
+                <div class="container">
+                    <div class="img-wrapper"><img src="{% static 'junkiri.png' %}" /></div>
+                    <div class="details">
+                        <h3>Junkiri Aryal</h3>
+                        <h5>Khetalo</h5>
+                        <div class="social-icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="img-wrapper"><img src="{% static 'amit.jpg' %}" /></div>
+                    <div class="details">
+                        <h3>Amit Gautam</h3>
+                        <h5>Khetalo</h5>
+                        <div class="social-icons">
+                            <i class="fab fa-facebook-f"></i>
+                            <i class="fab fa-twitter"></i>
+                            <i class="fab fa-instagram"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="box1">
-                <h2>Our Mission</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
-            </div>
-            <div class="box2">
-                <h2>Our Vision</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
-            </div>
-            <div class="box3">
-                <h2>Our Values</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                    eligendi
-                    sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                    placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                    illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                    beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                    nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                    laudantium
-                    excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                    aliquid nulla officia asperiores iure!</p>
-            </div>
-
         </div>
+
+        <div class="box1">
+            <h2>Our Mission</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
+                eligendi
+                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
+                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
+                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
+                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
+                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
+                laudantium
+                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
+                aliquid nulla officia asperiores iure!</p>
+        </div>
+        <div class="box2">
+            <h2>Our Vision</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
+                eligendi
+                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
+                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
+                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
+                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
+                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
+                laudantium
+                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
+                aliquid nulla officia asperiores iure!</p>
+        </div>
+        <div class="box3">
+            <h2>Our Values</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
+                eligendi
+                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
+                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
+                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
+                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
+                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
+                laudantium
+                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
+                aliquid nulla officia asperiores iure!</p>
+        </div>
+
     </div>
     <!-- <script>
 

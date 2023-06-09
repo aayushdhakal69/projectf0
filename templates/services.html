@@ -13,10 +13,6 @@
 <body>
     {% block content %}
     <style>
-        .main {
-            padding-top: 3.1rem;
-        }
-
         .about-main {
             display: grid;
             /* height: 100vh; */
@@ -38,16 +34,19 @@
 
         main img {
             width: 100%;
-            height: 60vh;
+            height: 70vh;
             object-fit: cover;
-            object-position: 25% 25%;
+            /* object-position: 25% 25%; */
         }
 
         .sidebar {
             margin-top: 10px;
             grid-area: sidebar;
-            display: flex;
-            justify-content: center;
+            position: fixed;
+            top: 20%;
+            left: 6%;
+            transform: translate(-50%, -50%);
+            text-align: start;
         }
 
         .sidebar ul li {
@@ -176,98 +175,96 @@
 
         /* Card css end */
     </style>
-    <div class="main">
-        <!-- <h1>about page</h1> -->
-        <div class="about-main">
-            <main>
-                <img src="{% static 'hello.jpg' %}" alt="">
-                <h1>Services</h1>
-                <p>
-                    <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
+    <!-- <h1>about page</h1> -->
+    <div class="about-main">
+        <main>
+            <img src="{% static 'services.jpg' %}" alt="">
+            <h1>Services</h1>
+            <p>
+                <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
                     soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
                     provident quasi odit id, ipsa ex.
                     soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
                     provident quasi odit id, ipsa ex. -->
-                    We can give great services for you. As you know we are first agency or company to work in this field
-                    in Nepal. So, there is no doubt in our service, you can expect a good orgasm for our single boys and
-                    girls.
-                    If you are not able to make a child and having problems, unsatisfaction with your relationship, you
-                    can hire us. We can provide a hansome/beautiful member for you. Thank yoy! Have a great day.
-                <p>
-                    <hr>
-            </main>
-            <div class="sidebar">
-                <ul>
-                    <a href="">
-                        <li>Our Services</li>
-                    </a>
-                    <a href="">
-                        <li>Our Values</li>
-                    </a>
-                    <a href="">
-                        <li>Our Vision</li>
-                    </a>
-                    <a href="">
-                        <li>Contact Us</li>
-                    </a>
-                    <a href="">
-                        <li>Developers</li>
-                    </a>
-                </ul>
-            </div>
+                We can give great services for you. As you know we are first agency or company to work in this field
+                in Nepal. So, there is no doubt in our service, you can expect a good orgasm for our single boys and
+                girls.
+                If you are not able to make a child and having problems, unsatisfaction with your relationship, you
+                can hire us. We can provide a hansome/beautiful member for you. Thank yoy! Have a great day.
+            <p>
+                <hr>
+        </main>
+        <div class="sidebar">
+            <ul>
+                <a href="">
+                    <li>Our Services</li>
+                </a>
+                <a href="">
+                    <li>Our Values</li>
+                </a>
+                <a href="">
+                    <li>Our Vision</li>
+                </a>
+                <a href="">
+                    <li>Contact Us</li>
+                </a>
+                <a href="">
+                    <li>Developers</li>
+                </a>
+            </ul>
+        </div>
 
-            <div class="box1">
-                <div class="card">
-                    <div class="content">
-                        <h2>CHAK</h2>
-                        <h3>Anal Service</h3>
-                        <p>Our memebers is okey with anal sex and have a great stamina</p>
-                        <a href="/contact">Contact Us</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <h2>CONDO</h2>
-                        <h3>24/7 Service</h3>
-                        <p>We are able to give 24/7 service and you can call us any time.</p>
-                        <a href="/contact">Contact Us</a>
-                    </div>
+        <div class="box1">
+            <div class="card">
+                <div class="content">
+                    <h2>CHAK</h2>
+                    <h3>Anal Service</h3>
+                    <p>Our memebers is okey with anal sex and have a great stamina</p>
+                    <a href="/contact">Contact Us</a>
                 </div>
             </div>
-            <div class="box2">
-                <div class="card">
-                    <div class="content">
-                        <h2>LADO</h2>
-                        <h3>Big Dicks</h3>
-                        <p>As a company we only hire members have bigger dick size and they can give great orgasm.</p>
-                        <a href="/contact">Hire Khetalo</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="content">
-                        <h2>VIRGIN</h2>
-                        <h3>Contraseptips</h3>
-                        <p>Our members use durable and beliveable sex devices if according to your needs.</p>
-                        <a href="/contact">Contact Us</a>
-                    </div>
+            <div class="card">
+                <div class="content">
+                    <h2>CONDO</h2>
+                    <h3>24/7 Service</h3>
+                    <p>We are able to give 24/7 service and you can call us any time.</p>
+                    <a href="/contact">Contact Us</a>
                 </div>
             </div>
-            <div class="box3">
-                <div class="card">
-                    <div class="content">
-                        <h2>PORN</h2>
-                        <h3>Great Stamina</h3>
-                        <p>Our memebers are inspired from cristiano ronaldo so they are good with stamina.</p>
-                        <a href="/contact">Contact Us</a>
-                    </div>
+        </div>
+        <div class="box2">
+            <div class="card">
+                <div class="content">
+                    <h2>LADO</h2>
+                    <h3>Big Dicks</h3>
+                    <p>As a company we only hire members have bigger dick size and they can give great orgasm.</p>
+                    <a href="/contact">Hire Khetalo</a>
                 </div>
-                <div class="card">
-                    <div class="content">
-                        <h2>PUSSY</h2>
-                        <h3>Segrogacy</h3>
-                        <p>We also can provide a agent for your child of you want to add your gene in child.</p>
-                        <a href="/contact">Contact Us</a>
-                    </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2>VIRGIN</h2>
+                    <h3>Contraseptips</h3>
+                    <p>Our members use durable and beliveable sex devices if according to your needs.</p>
+                    <a href="/contact">Contact Us</a>
+                </div>
+            </div>
+        </div>
+        <div class="box3">
+            <div class="card">
+                <div class="content">
+                    <h2>PORN</h2>
+                    <h3>Great Stamina</h3>
+                    <p>Our memebers are inspired from cristiano ronaldo so they are good with stamina.</p>
+                    <a href="/contact">Contact Us</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2>PUSSY</h2>
+                    <h3>Segrogacy</h3>
+                    <p>We also can provide a agent for your child of you want to add your gene in child.</p>
+                    <a href="/contact">Contact Us</a>
                 </div>
             </div>
         </div>

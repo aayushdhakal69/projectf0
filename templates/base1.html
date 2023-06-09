@@ -12,6 +12,7 @@
     <title>Khetalo.com</title>
 
     {% block body %}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -22,129 +23,177 @@
             text-decoration: none !important;
         }
 
-        /* This will apply for all the text color of a  */
-        .nav_a,
-        i {
-            color: rgb(185, 227, 184);
+        header {
+            position: sticky;
+            top: 0;
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #003e29;
+            padding: 0 .5rem;
+            height: 60px;
+            border-bottom: 1px solid gray;
+            z-index: 999;
+
         }
 
-        .logo a,
-        i {
-            font-weight: bolder;
-            font-size: larger;
+
+        .logo {
+            margin-left: 10px;
+            width: 20%;
         }
 
-        .navbar {
-            position: fixed;
-            z-index: 1111;
+        .logo a {
+            color: white;
+            font-size: 1.5rem;
+            border-bottom: 2px solid transparent;
         }
 
-        /* This will apply for upto 768 px deveoce only */
-        @media (max-width: 768px) {
-            .logo {
-                border-bottom: 1px solid gray;
+        .navlist ul {
+            margin-right: 3rem;
+            display: flex;
+            gap: 4.5rem;
+        }
+
+        .navlist ul li a:hover {
+            border-bottom: 3px solid red;
+            border-radius: 5px;
+        }
+
+        /* Yo Chai Home ,About ,Person Contact  vako a Tag Ho  */
+
+        ul li {
+            position: relative;
+        }
+
+        /*         ul li a::before {
+            content: "";
+            display: block;
+            height: 2px;
+            background: red;
+            position: absolute;
+            width: 0%;
+            bottom: 0;
+            transition: .5s all ease-in-out;
+        }
+
+        .active::before {
+            content: "";
+            display: block;
+            height: 2px;
+            background: red;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            transition: .5s all ease-in-out;
+        } */
+
+        ul li a:hover::before {
+            width: 100%;
+        }
+
+        .ham,
+        .cross {
+            font-size: 1.2rem;
+            font-size: bold;
+            color: white;
+        }
+
+        .navlist li a {
+            gap: 1rem;
+            display: flex;
+            gap: .5rem;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .links {
+            color: white !important;
+        }
+
+
+        /* HIding ham and crosss in desktop mode */
+        .cross,
+        .ham {
+            display: none;
+        }
+
+        @media(max-width:768px) {
+            ul li a::before {
+                all: initial;
 
             }
 
-            .navList {
+            .active::before {
+                all: initial;
+            }
+
+            ul li a::before {
+                all: initial
+            }
+
+            .logo {
+                width: 100%;
+            }
+
+            .logo {
+                display: flex;
+                gap: 1rem;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .navlist {
+                position: absolute;
+                top: 6vh;
+                left: 0;
+                padding: 2rem 0;
                 background: #003e29;
-            }
-
-            .navbar {
                 width: 100%;
-                height: 5vh;
             }
 
-            .logo {
-                float: left;
-                display: flex;
-                justify-content: space-around;
-                align-items: center;
-                height: 5vh;
-                width: 100%;
-                position: fixed;
-                background-color: rgb(10, 43, 29);
-
-
-            }
-
-            .navList a {
-                display: flex;
-                gap: 0 1rem;
-                align-items: center;
-                justify-content: center;
-            }
-
-            .navList {
-                float: right;
-                display: flex;
+            .navlist ul {
+                height: 100%;
                 flex-direction: column;
-                gap: 0 1rem;
-                height: 95vh;
-                position: fixed;
-                top: 5vh;
-                width: 100%;
                 align-items: center;
-                justify-content: center;
-                gap: 2rem 0;
-                left: -100%;
-                transition: all .5s;
-                z-index: 999;
-                background-color: rgb(10, 43, 29);
-
-
+                justify-content: flex-start;
+                gap: 2rem;
             }
 
-            /* hiding croos at initially */
+            .navlist li {
+                position: static;
+            }
+
+            .navlist li a {
+                gap: 1rem;
+                display: flex;
+                gap: .5rem;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .navlist,
             .cross {
                 display: none;
             }
 
-            .menu {
-                row-gap: 20px;
+            .ham {
+                display: flex;
+                margin-right: 12px;
             }
-        }
 
-        /* this will apply after 768px device only */
-        @media(min-width: 768px) {
 
-            /* hiding hamburger and cross in large device */
-            .cross,
-            .hamBurger {
+            ul li a::before {
                 display: none;
             }
 
-            .navbar {
-                display: flex;
-                justify-content: space-between;
-                padding: 0 5%;
-                height: 7vh;
-                align-items: center;
-                border-bottom: 1px solid gray;
-                position: fixed;
-                width: 100%;
-                background-color: rgb(10, 43, 29);
-                z-index: 999;
-            }
-
-            .navList {
-                display: flex;
-                gap: 0 1rem;
-            }
-
-            .navList a {
-                padding: .2rem 2rem;
-                transition: .3s;
-                display: flex;
-                gap: 0 1rem;
-            }
-
-            .navList a:hover,
-            a.active {
-                border-radius: 1rem;
-                background: rgb(124, 172, 126);
+            .fontAwosome {
+                display: none !important;
             }
         }
+
+
 
         .main_footer {
             position: static;
@@ -155,7 +204,7 @@
         }
 
         footer {
-            margin-top: 17rem;
+            margin-top: 13rem;
             position: relative;
             width: 100%;
             background: #003e29;
@@ -297,11 +346,10 @@
 </head>
 
 <body>
-    <div class="navbar">
+    <!-- <div class="navbar">
         <div class="logo">
             <a href="/" title="khetalo.com" class="nav_a">Khetalo.com</a>
 
-            <!-- Hamburger -->
             <i class="fa-solid fa-bars hamBurger"></i>
             <i class="fa-solid fa-xmark cross"></i>
         </div>
@@ -333,16 +381,52 @@
             </li>
             <li>
                 <a href="/personlist" title="contact" class="nav_a">
-                    <i class="fa-solid fa-phone"></i>
-                    Members</a>
+                    <i class="fa-sharp fa-solid fa-bed"></i>
+                    Our Khetalos</a>
             </li>
         </ul>
+    </div> -->
+    <header>
+        <div class="logo">
+            <a href="/">
+                Khetalo.Com
+            </a>
+            <i class="fa-solid fa-bars ham">
+            </i>
+            <i class="fa-solid fa-circle-xmark cross"></i>
+        </div>
+        <div class="navlist" id="navList">
+            <ul>
+                <li><a class="links" href="/">
+                        <i class="fa-solid fa-house fontAwosome"></i>
+                        Home</a>
+                </li>
+                <li><a class="links" href="/about">
+                        About
+                        <i class="fa-sharp fa-solid fa-users fontAwosome"></i>
+                    </a>
+                </li>
+                <li><a class="links" href="/services">
+                        Services
+                        <i class="fa-solid fa-user fontAwosome"></i>
+                    </a>
+                </li>
+                <li>
+                    <a class="links" href="/contact">
+                        Contact
+                        <i class="fa-solid fa-phone fontAwosome"></i>
+                    </a>
+                </li>
 
 
-
-        <!-- hmaburger is here -->
-
-    </div>
+                <li><a class="links" href="/personlist">
+                        Khetalos
+                        <i class="fa-solid fa-phone fontAwosome"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
     {% block content %} {% endblock %}
     <div class="main_footer">
         <footer>
@@ -365,25 +449,31 @@
                 <li><a href="#">Members</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
-            <p>2023 khetalo.com | All Rights Reserved</p>
+            <p>&copy; 2023 khetalo.com | All Rights Reserved</p>
         </footer>
     </div>
 
     <!-- Your Script is here -->
     <script>
-
-        const navList = document.querySelector('.navList')
-        const hamBurger = document.querySelector('.hamBurger');
-        hamBurger.addEventListener('click', function () {
-            navList.style.left = '0';
-            hamBurger.style.display = 'none';
-            cross.style.display = 'block';
+        // Target teh active page 
+        const activePage = window.location.pathname
+        document.querySelectorAll(".links").forEach(links => {
+            if (links.href.includes(`${activePage}`)) {
+                links.classList.add("active")
+            }
         })
-        const cross = document.querySelector('.cross');
-        cross.addEventListener('click', function () {
-            navList.style.left = "-100%"
-            hamBurger.style.display = 'flex';
-            cross.style.display = 'none';
+
+        //show and Hide the links
+        document.querySelector(".ham").addEventListener("click", () => {
+            document.querySelector("#navList").style.display = "grid"
+            document.querySelector(".ham").style.display = "none"
+            document.querySelector(".cross").style.display = "flex"
+        })
+
+        document.querySelector(".cross").addEventListener("click", () => {
+            document.querySelector("#navList").style.display = "none"
+            document.querySelector(".ham").style.display = "flex"
+            document.querySelector(".cross").style.display = "none"
         })
     </script>
 </body>

@@ -17,40 +17,306 @@
             padding-top: 3.1rem;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: auto auto auto;
-            background-color: #2196F3;
+        .main-contact {
+            /* display: flex; */
+            font-size: 16px;
+            font-weight: bolder;
+            width: 80%;
+            margin: 50px auto;
+        }
+
+        .contact-left h3 {
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: #003e29;
+        }
+
+        .contact-box {
+            display: flex;
+        }
+
+
+
+        .contact-right {
+            flex-basis: 40%;
+            padding: 40px;
+            background: #e6890b;
+        }
+
+        .title {
+            margin-bottom: 10px;
+        }
+
+        .main-contact p {
+            margin-bottom: 40px;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            /* margin-bottom: 20px; */
+        }
+
+        .input-row label {
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .input-row .input-group {
+            flex-basis: 45%;
+        }
+
+        input {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #78371c;
+            outline: none;
+            padding-bottom: 5px;
+        }
+
+        textarea {
+            width: 100%;
+            border: 1px solid #78371c;
+            outline: none;
             padding: 10px;
         }
 
-        .grid-item {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(0, 0, 0, 0.8);
-            padding: 20px;
-            font-size: 30px;
-            text-align: center;
+        label {
+            margin-bottom: 6px;
+            display: block;
+            color: #d51c3f;
+            /* font-size: bold; */
+        }
+
+        button {
+            cursor: pointer;
+            background: #e6890b;
+            width: 100px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            margin: 10px 0px 20px;
+            padding: 15px;
+            font-weight: bold;
+            box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2);
+        }
+
+        tr td:first-child {
+            padding-right: 20px;
+        }
+
+        tr td {
+            padding-top: 20px;
+        }
+
+
+        @media (min-width: 768px) {
+            .input-row {
+                margin-bottom: 20px;
+            }
+
+            .contact-left {
+                flex-basis: 60%;
+                padding: 40px 60px;
+            }
+        }
+
+        /* This will apply for upto 768 px deveoce only */
+        @media (max-width: 768px) {
+            .contact-box {
+                display: block;
+            }
+
+            .main-contact {
+                font-size: 14px;
+                font-weight: bolder;
+                width: 80%;
+                margin: 50px auto;
+            }
+
+            .input-row {
+                display: block;
+                /* margin-bottom: 20px; */
+            }
+
+            input {
+                padding-bottom: 4px;
+            }
+
+            .input-group {
+                /* background-color: red; */
+                padding: 10px;
+            }
         }
     </style>
     <div class="main">
-        <!-- <img src="{% static 'hello.jpg' %}" alt=""> -->
-        <!-- background: url('/static/wave.png'); -->
-        <div class="grid-container">
-            <div class="grid-item">1</div>
-            <div class="grid-item">2</div>
-            <div class="grid-item">3</div>
-            <!-- <div class="grid-item">4</div>
-            <div class="grid-item">5</div>
-            <div class="grid-item">6</div>
-            <div class="grid-item">7</div>
-            <div class="grid-item">8</div>
-            <div class="grid-item">9</div> -->
+        <div class="main-contact">
+            <h1 class="title">Hire Khetalo</h1>
+            <!-- <p>K tapai ko baccha bhako xaina? Xaina bhane hamilai samjhanuhos, Hami tapailai khetalo upalabdha garaune
+                xau. Tesaile tala ko form bharnu hola, Dhanyabad!</p> -->
+            <div class="contact-box">
+                <div class="contact-left">
+                    <p class="slogan">K tapai ko baccha bhako xaina? Xaina bhane hamilai samjhanuhos, Hami tapailai
+                        khetalo upalabdha garaune
+                        xau. Tesaile tala ko form bharnu hola, Dhanyabad!</p>
+                    <h3>Enter Your Details</h3>
+                    <form action="/contact/" method="post">
+                        {% csrf_token %}
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Name</label>
+                                <input type="text" placeholder="Aayush Dhakal" name="name" id="name"
+                                    onkeyup="validName(this)">
+                            </div>
+                            <div class="input-group">
+                                <label>Address</label>
+                                <input type="text" placeholder="Hetauda" name="address">
+                            </div>
+                        </div>
+                        <div class="input-row">
+                            <div class="input-group">
+                                <label>Phone</label>
+                                <input type="phone" placeholder="9800000000" name="phone" id="phone"
+                                    onkeyup="validPhone(this)">
+                            </div>
+                            <div class="input-group">
+                                <label>Email</label>
+                                <input type="email" placeholder="abcd@gmail.com" name="email">
+                            </div>
+                        </div>
+                        <label>Message</label>
+                        <textarea rows="5" placeholder="Your Message" name="content"
+                            onkeyup="validMessage(this)"></textarea>
+
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
+                <div class="contact-right">
+                    <h3>Visit Us</h3>
+                    <table>
+                        <tr>
+                            <td>Email</th>
+                            <td>hello@gmail.com</td>
+                        </tr>
+                        <tr>
+                            <td>Phone</th>
+                            <td>+977-9800000000</td>
+                        </tr>
+                        <tr>
+                            <td>Address</th>
+                            <td>Hetauda-5 Piple <br>Makawanpur</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-
     </div>
-    <!-- <script>
+    <script>
+        let flag = 1; //1 is for not error  and 0 is for error
+        // const regixx = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        const specialChars = (`(?=.*[!@#$%^&*\/])`)
+        function validName(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#nameError").innerText = "Name is required";
+                flag = 0;
+            } else {
+                if (!isNaN(elem.value)) {
+                    document.querySelector("#nameError").innerText =
+                        "Name must start with letter";
+                    flag = 0;
+                }
+                else {
 
-    </script> -->
+                    if (elem.value.match(`(?=.*[!@#$%^&*\/])`) || elem.value.match(`(?=.*[0-9])`)) {
+                        document.querySelector("#nameError").innerText =
+                            "Name must not have special characters and Numbers";
+                        flag = 0;
+                    }
+                    else {
+                        if (!elem.value.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+
+                            document.querySelector("#nameError").innerText = "Name Must Have First Name and Last Name"
+                            flag = 0
+                        }
+                        else {
+                            document.querySelector("#nameError").innerText = ""
+                            flag = 1
+
+                        }
+
+                    }
+                }
+            }
+        }
+        function validPhone(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#phoneError").innerText = "Please fill your number";
+                flag = 0;
+            } else {
+                if (isNaN(elem.value)) {
+                    document.querySelector("#phoneError").innerText =
+                        "Only supported numbers";
+                    flag = 0;
+                } else
+                    if (elem.value.length < 10) {
+                        document.querySelector("#phoneError").innerText = "Number must be 10 digits";
+                        flag = 0;
+                    }
+                    else {
+                        if (elem.value.length > 10) {
+                            document.querySelector("#phoneError").innerText = "Number must be 10 digits";
+                            flag = 0;
+                        }
+
+                        else {
+                            if (elem.value.length = 10) {
+                                document.querySelector("#phoneError").innerText = "";
+                                flag = 1;
+                            }
+                            else {
+                                document.querySelector("#phoneError").innerText = ""
+                                flag = 1
+                            }
+                        }
+                    }
+            }
+        }
+
+        function validMessage(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#contentError").innerText = "Write something";
+                flag = 0;
+            } else {
+                if (!isNaN(elem.value)) {
+                    document.querySelector("#contentError").innerText =
+                        "Must contain alfabets";
+                    flag = 0;
+                }
+                else {
+                    if (elem.value.length < 15) {
+                        document.querySelector("#contentError").innerText =
+                            "Must contain 15 characters";
+                        flag = 0;
+                    }
+                    else {
+                        document.querySelector("#contentError").innerText = ""
+                        flag = 1
+                    }
+                }
+            }
+        }
+        function validate() {
+            if (flag == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 
+        document.querySelector("#phone").value = "";
+        document.querySelector("#name").value = "";
+    </script>
     {% endblock %}
 
 </body>

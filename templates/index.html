@@ -18,11 +18,6 @@
     <style>
         @media (min-width: 768px) {
 
-
-            .main {
-                padding-top: 3.1rem;
-            }
-
             .imageBackground {
                 height: 80vh;
             }
@@ -31,8 +26,6 @@
                 margin: 3rem 0;
 
             }
-
-
         }
 
         @media (max-width: 768px) {
@@ -76,8 +69,8 @@
             flex-direction: column;
             width: 100%;
             gap: 1rem;
-            /* background-color: #467061; */
-            background-color: rgb(210, 203, 203);
+            background-color: #003e29;
+            /* background-color: rgb(210, 203, 203); */
         }
 
         .mainContainer ul li {
@@ -95,7 +88,7 @@
         /* BACKGROUND IMAGE WITH HEIGHT 80VH IS HERE */
         .imageBackground {
             /* background-image: url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg"); */
-            background: url('/static/image2.jpg');
+            background: url('/static/index.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -103,11 +96,11 @@
             min-height: 50vh;
             display: flex;
             justify-content: center;
-
+            align-items: center;
         }
 
         .imageBackground h1 {
-            color: white;
+            color: #fff;
         }
 
 
@@ -124,15 +117,14 @@
         }
 
         .card {
+            color: #fff;
             display: flex;
             flex-direction: column;
             max-width: 25rem;
             background-color: aquamarine;
             border-radius: .5rem;
             gap: 1rem;
-            /* min-height: 15rem; */
             padding: 1rem;
-            /* margin: 3rem 0; */
             justify-content: center;
 
             /* morphism Effect */
@@ -173,18 +165,36 @@
         }
 
         .card button {
-            padding: .5rem;
-            width: max-content;
-            align-self: flex-start;
-            background-color: #bcbdbc;
-            border: 1px solid transparent;
-            border-radius: .5rem;
-            transition: all .2s;
+            position: relative;
+            width: 100px;
+            padding: 10px 0;
+            text-align: center;
+            margin: 0 10px;
+            font-weight: bold;
+            border: 2px solid #00d3ff;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .card span {
+            background: #00d3ff;
+            height: 100%;
+            width: 0;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        .card button:hover span {
+            width: 100%;
         }
 
         .card button:hover {
-            border: 1px solid #003e29;
-
+            color: #000;
         }
 
         .card h2,
@@ -198,14 +208,13 @@
         /* BANNER SECTION IS HERE */
 
         .banner {
-            /* background-image: url("https://images.unsplash.com/photo-1618588507085-c79565432917?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8YmVhdXRpZnVsJTIwbmF0dXJlfGVufDB8fDB8fHww&w=1000&q=80"); */
-
-            background: url('/static/image1.jpg');
+            background: url('/static/banner.jpg');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
             height: 50vh;
-            width: 100%;
+            width: 90%;
+            border-radius: 10px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -266,7 +275,7 @@
             display: flex;
             flex-direction: column;
             width: 90%;
-            margin-bottom: 3rem;
+            margin: 3rem 0;
             gap: 1rem;
             justify-content: center;
             align-items: center;
@@ -285,7 +294,7 @@
 
         .conclusion h1,
         .conclusion p {
-            color: #000;
+            color: #fff;
             text-align: justify;
         }
 
@@ -298,6 +307,22 @@
             .imageBackground {
                 height: 20vh;
             }
+        }
+
+        .imageBackground span {
+            border-bottom: 4px solid cyan;
+        }
+
+        .filler {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin-top: 2rem;
+        }
+
+        .filler span {
+            border-bottom: 4px solid gold;
         }
     </style>
 
@@ -317,7 +342,7 @@
         <ul class="firstDivSection">
             <li>
                 <div class="imageBackground">
-                    <h1>The Text Is In Top</h1>
+                    <h1>Hamrai <span>Khetalo</span></h1>
                 </div>
             </li>
         </ul>
@@ -345,7 +370,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
                             perferendis? Repellendus, voluptatibus similique!</p>
 
-                        <button>Click Here</button>
+                        <button><span></span> Click Here</button>
                     </div>
 
                     <!-- second card -->
@@ -366,7 +391,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
                             perferendis? Repellendus, voluptatibus similique!</p>
 
-                        <button>Click Here</button>
+                        <button><span></span> Click Here</button>
                     </div>
 
 
@@ -390,7 +415,7 @@
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti ducimus voluptatibus
                             perferendis? Repellendus, voluptatibus similique!</p>
 
-                        <button>Click Here</button>
+                        <button><span></span> Click Here</button>
                     </div>
                 </div>
 
@@ -480,9 +505,13 @@
 
 
 
+
     </div>
 
-
+    <div class="filler">
+        <h1>Hire Us</h1>
+        <h3>Gaad Guleti <span>Condo Kharani</span></h3>
+    </div>
 
     <!-- SCRIPT IS HERE -->
     {% endblock %}

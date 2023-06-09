@@ -112,7 +112,11 @@
 
         @media (min-width: 768px) {
             .input-row {
-                margin-bottom: 20px;
+                margin-bottom: 9px;
+            }
+
+            .row2 {
+                margin-top: 20px;
             }
 
             .contact-left {
@@ -136,7 +140,7 @@
 
             .input-row {
                 display: block;
-                /* margin-bottom: 20px; */
+                /* margin-bottom: 9px; */
             }
 
             input {
@@ -147,6 +151,13 @@
                 /* background-color: red; */
                 padding: 10px;
             }
+        }
+
+        #nameError,
+        #phoneError,
+        #contentError {
+            font-size: 13px;
+            opacity: .6;
         }
     </style>
     <div class="main">
@@ -165,25 +176,30 @@
                         <div class="input-row">
                             <div class="input-group">
                                 <label>Name</label>
-                                <input type="text" placeholder="Aayush Dhakal" name="name">
+                                <input type="text" placeholder="Aayush Dhakal" name="name" onkeyup="validName(this)">
                             </div>
                             <div class="input-group">
                                 <label>Address</label>
                                 <input type="text" placeholder="Hetauda" name="address">
                             </div>
                         </div>
-                        <div class="input-row">
+                        <div id="nameError"></div>
+                        <div class="input-row row2">
                             <div class="input-group">
                                 <label>Phone</label>
-                                <input type="phone" placeholder="9800000000" name="phone">
+                                <input type="phone" placeholder="9800000000" name="phone" onkeyup="validPhone(this)">
                             </div>
+
                             <div class="input-group">
                                 <label>Email</label>
                                 <input type="email" placeholder="abcd@gmail.com" name="email">
                             </div>
                         </div>
+                        <div id="phoneError"></div>
                         <label>Message</label>
-                        <textarea rows="5" placeholder="Your Message" name="content"></textarea>
+                        <textarea rows="5" placeholder="Your Message" name="content"
+                            onkeyup="validMessage(this)"></textarea>
+                        <div id="contentError"></div>
 
                         <button type="submit">Submit</button>
                     </form>
@@ -201,16 +217,119 @@
                         </tr>
                         <tr>
                             <td>Address</th>
-                            <td>Hetauda-5 Piple <br>Makawanpur</td>
+                            <td>Hetauda-0 Piple <br>Makawanpur</td>
                         </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-    <!-- <script>
+    <script>
+        let flag = 1; //1 is for not error  and 0 is for error
+        // const regixx = /[`!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~]/;
+        const specialChars = (`(?=.*[!@#$%^&*\/])`)
+        function validName(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#nameError").innerText = "Name is required";
+                flag = 0;
+            } else {
+                if (!isNaN(elem.value)) {
+                    document.querySelector("#nameError").innerText =
+                        "Name must start with letter";
+                    flag = 0;
+                }
+                else {
 
-    </script> -->
+                    if (elem.value.match(`(?=.*[!@#$%^&*\/])`) || elem.value.match(`(?=.*[0-9])`)) {
+                        document.querySelector("#nameError").innerText =
+                            "Name must not have special characters and Numbers";
+                        flag = 0;
+                    }
+                    else {
+                        if (!elem.value.match(/^[a-zA-Z]+ [a-zA-Z]+$/)) {
+
+                            document.querySelector("#nameError").innerText = "Name Must Have First Name and Last Name"
+                            flag = 0
+                        }
+                        else {
+                            document.querySelector("#nameError").innerText = ""
+                            flag = 1
+
+                        }
+
+                    }
+                }
+            }
+        }
+        function validPhone(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#phoneError").innerText = "Please fill your number";
+                flag = 0;
+            } else {
+                if (isNaN(elem.value)) {
+                    document.querySelector("#phoneError").innerText =
+                        "Only supported numbers";
+                    flag = 0;
+                } else
+                    if (elem.value.length < 10) {
+                        document.querySelector("#phoneError").innerText = "Number must be 10 digits";
+                        flag = 0;
+                    }
+                    else {
+                        if (elem.value.length > 10) {
+                            document.querySelector("#phoneError").innerText = "Number must be 10 digits";
+                            flag = 0;
+                        }
+
+                        else {
+                            if (elem.value.length = 10) {
+                                document.querySelector("#phoneError").innerText = "";
+                                flag = 1;
+                            }
+                            else {
+                                document.querySelector("#phoneError").innerText = ""
+                                flag = 1
+                            }
+                        }
+                    }
+            }
+        }
+
+        function validMessage(elem) {
+            if (elem.value.trim() <= 0) {
+                document.querySelector("#contentError").innerText = "Write something";
+                flag = 0;
+            } else {
+                if (!isNaN(elem.value)) {
+                    document.querySelector("#contentError").innerText =
+                        "Must contain alfabets";
+                    flag = 0;
+                }
+                else {
+                    if (elem.value.length < 15) {
+                        document.querySelector("#contentError").innerText =
+                            "Must contain 15 characters";
+                        flag = 0;
+                    }
+                    else {
+                        document.querySelector("#contentError").innerText = ""
+                        flag = 1
+                    }
+                }
+            }
+        }
+        function validate() {
+            if (flag == 1) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        // 
+        document.querySelector("#phone").value = "";
+        document.querySelector("#name").value = "";
+    </script>
     {% endblock %}
 
 </body>
