@@ -76,7 +76,7 @@ def contact(request):
                 fail_silently=False,
             )
             messages.success(request, "Successfully Received")
-            return render(request, "contact2.html", {"name": name})
+            return render(request, "contact.html", {"name": name})
         else:
             messages.info(request, "Please fill the form correctly")
             return redirect("contact")

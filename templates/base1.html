@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+{% block body %}
 
 <head>
     <meta charset="UTF-8">
@@ -8,10 +9,10 @@
 
     <!-- Font Awosome is Here -->
     <script src="https://kit.fontawesome.com/c57b7eb6b9.js" crossorigin="anonymous"></script>
+    <!-- aos animation css -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <title>Khetalo.com</title>
-
-    {% block body %}
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <style>
         * {
@@ -346,50 +347,10 @@
 </head>
 
 <body>
-    <!-- <div class="navbar">
-        <div class="logo">
-            <a href="/" title="khetalo.com" class="nav_a">Khetalo.com</a>
-
-            <i class="fa-solid fa-bars hamBurger"></i>
-            <i class="fa-solid fa-xmark cross"></i>
-        </div>
-
-        <ul class="navList">
-            <li>
-
-                <a href="/" class="active nav_a" title="home">
-                    <i class="fa-solid fa-house"></i>
-                    Home</a>
-            </li>
-
-            <li>
-                <a href="/about" title="about" class="nav_a">
-                    <i class="fa-solid fa-people-roof"></i>
-                    About</a>
-            </li>
-
-            <li>
-                <a href="/services" title="service" class="nav_a">
-                    <i class="fa-solid fa-handshake-angle"></i>
-                    Services</a>
-            </li>
-
-            <li>
-                <a href="/contact" title="contact" class="nav_a">
-                    <i class="fa-solid fa-phone"></i>
-                    Contact</a>
-            </li>
-            <li>
-                <a href="/personlist" title="contact" class="nav_a">
-                    <i class="fa-sharp fa-solid fa-bed"></i>
-                    Our Khetalos</a>
-            </li>
-        </ul>
-    </div> -->
     <header>
         <div class="logo">
             <a href="/">
-                Khetalo.Com
+                Khetalo.com
             </a>
             <i class="fa-solid fa-bars ham">
             </i>
@@ -421,7 +382,7 @@
 
                 <li><a class="links" href="/personlist">
                         Khetalos
-                        <i class="fa-solid fa-phone fontAwosome"></i>
+                        <i class="fa-solid fa-hand-middle-finger"></i>
                     </a>
                 </li>
             </ul>
@@ -446,7 +407,7 @@
                 <li><a href=".">Home</a></li>
                 <li><a href="/about">About</a></li>
                 <li><a href="/services">Services</a></li>
-                <li><a href="#">Members</a></li>
+                <li><a href="/personlist">Members</a></li>
                 <li><a href="/contact">Contact</a></li>
             </ul>
             <p>&copy; 2023 khetalo.com | All Rights Reserved</p>
@@ -454,6 +415,14 @@
     </div>
 
     <!-- Your Script is here -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init(
+            {
+                duration: 1000
+            }
+        );
+    </script>
     <script>
         // Target teh active page 
         const activePage = window.location.pathname

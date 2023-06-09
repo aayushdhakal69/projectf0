@@ -12,11 +12,8 @@
 
 <body>
     {% block content %}
-    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
     <style>
-        /*         footer {
-            margin-top: 36rem;
-        } */
         * {
             scroll-behavior: smooth;
         }
@@ -25,10 +22,11 @@
             display: grid;
             /* height: 100vh; */
             grid-template-columns: .9fr 1fr 1fr 1fr;
-            grid-template-rows: 1.5fr .3fr;
+            grid-template-rows: 1.5fr .3fr .2fr;
             grid-template-areas:
                 "sidebar main main main"
-                "sidebar box1 box2 box3";
+                "sidebar box1 box2 box3"
+                "sidebar test test test";
             grid-gap: 1rem;
             /* text-align: center;
             font-size: 1.5rem; */
@@ -45,6 +43,15 @@
             height: 60vh;
             object-fit: cover;
             /* object-position: 25% 25%; */
+        }
+
+        .test {
+            margin-top: 2rem;
+            /* display: flex;
+            background: red;
+            align-items: center;
+            justify-content: center; */
+            grid-area: test;
         }
 
         .sidebar {
@@ -105,12 +112,13 @@
         @media only screen and (max-width: 640px) {
             .about-main {
                 grid-template-columns: 1fr;
-                grid-template-rows: 2fr .4fr .4fr .4fr;
+                grid-template-rows: 2fr .4fr .4fr .4fr .3fr;
                 grid-template-areas:
                     "main"
                     "box1"
                     "box2"
-                    "box3";
+                    "box3"
+                    "test";
             }
 
             .about-main {
@@ -241,28 +249,168 @@
         }
 
         /* sidebar css ends */
+        /* testimonial css start */
+        .info p {
+            text-align: left;
+        }
+
+        .testamonialContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 4rem;
+        }
+
+        .grandParent {
+            width: 100%;
+            height: 25vh;
+            display: flex;
+            gap: 2rem;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .parent {
+            height: 100%;
+            width: 40%;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            border-radius: .5rem;
+        }
+
+        .child1 {
+            background-color: white;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .child2 {
+            background-color: white;
+            z-index: 1;
+            top: 3rem;
+            display: flex;
+            justify-content: center;
+            align-items: end;
+            gap: 1rem;
+            padding-bottom: .5rem;
+        }
+
+        .child2 a i {
+            font-size: 2rem;
+            color: black;
+        }
+
+        .child1,
+        .child2 {
+            box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 10px, rgba(0, 0, 0, 0.3) 0px 5px 5px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: .5rem;
+        }
+
+
+
+        .circle {
+            background: white;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            border-radius: 4px;
+            min-height: 21vh;
+            min-width: 21vh;
+            box-shadow: rgba(97, 95, 95, 0.281) 0px 10px 10px, rgba(0, 0, 0, 0.3) 0px 5px 5px;
+        }
+
+        /* First testamonial Image */
+        .circleOne {
+            background-image: url("/static/baba.jpg");
+        }
+
+        /* Second Tesamonial Image */
+        .circleTwo {
+            background-image: url("/static/sauta.jpg");
+        }
+
+
+
+
+        .imageBackground {
+            width: 40%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .info {
+            width: 60%;
+        }
+
+
+
+        @media(max-width: 768px) {
+            .grandParent {
+                width: 100%;
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                gap: 5rem;
+                justify-content: center;
+                padding: .5rem;
+
+            }
+
+            .parent {
+                height: 50vh;
+                width: 100%;
+            }
+
+            .child1 {
+                background-color: white;
+                z-index: 2;
+                flex-direction: column;
+            }
+
+            .circle {
+                border-radius: 100%;
+            }
+
+            .imageBackground {
+                width: 100%;
+            }
+
+            .info {
+                width: 80%;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+
+            }
+        }
     </style>
     <!-- <h1>about page</h1> -->
     <div class="about-main">
         <main>
             <img src="{% static 'banner.jpg' %}" alt="">
-            <h1>Heading ho hai</h1>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis, eos deleniti vel accusantium at
-                soluta, laboriosam dolor recusandae architecto reiciendis fuga eius magnam praesentium aspernatur ut
-                provident quasi odit id, ipsa ex ipsum eligendi quae enim? Delectus temporibus, repellat quasi quis
-                veniam magni placeat recusandae dolorem eius sed voluptatibus quo quod corporis reiciendis
-                voluptatum dolorum eos quia accusantium necessitatibus magnam labore! Error doloribus dolore ducimus
-                accusamus! Ea repellat debitis rem repudiandae numquam? Saepe, magnam consequuntur? Amet natus
-                recusandae illo corporis minima mollitia officiis incidunt distinctio vel dolorum, eveniet quis, ad
-                numquam rem molestiae sapiente eligendi ut. Ab blanditiis nesciunt amet eum eius nemo similique
-                veritatis consectetur at saepe. Libero doloremque voluptates laboriosam at sequi! Autem facilis
-                voluptates illum nobis, pariatur magnam debitis nam impedit consequuntur dolore omnis sit in
-                assumenda vitae nesciunt temporibus cum accusantium iste ullam possimus, incidunt aliquam quidem id!
-                Iure laudantium facilis mollitia dicta minima ipsa et laborum. Minus architecto at ea explicabo
-                eaque mollitia facilis beatae laborum maiores quia, corporis sed non a quo nostrum veniam. Inventore
-                optio reiciendis voluptatem vitae quisquam maxime harum fuga neque quae repellat. Doloremque porro
-                accusamus veritatis voluptatem architecto! Doloremque quis in facere odio unde! Amet dicta quia
-                deserunt nostrum perspiciatis!</p>
+            <h1>About Us</h1>
+            <p data-aos="fade-up">Welcome to our mKhetalo, where we believe in providing an unparalleled experience that
+                caters to the diverse needs and desires of our clients. With a team of dedicated professionals, we
+                strive to create a safe and inclusive environment where individuals can explore their fantasies and
+                indulge in the pleasures they seek. Our khetalos are not only exceptionally skilled in their craft but
+                also committed to ensuring your utmost satisfaction. We understand that everyone has unique preferences,
+                and our diverse roster of talented individuals reflects our commitment to diversity and inclusivity.
+                Whether you're seeking companionship, intimacy, or an unforgettable experience, our company is here to
+                fulfill your desires with professionalism, discretion, and respect. Your pleasure is our priority, and
+                we invite you to embark on a journey of unparalleled pleasure with us.</p>
             <hr>
             <div class="mapouter">
                 <div class="gmap_canvas"><iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no"
@@ -311,7 +459,7 @@
                     <li>Developers</li>
                 </a>
             </ul>
-            <div class="wrapper">
+            <div class="wrapper" data-aos="fade-up">
                 <div class="container">
                     <div class="img-wrapper"><img src="{% static 'sauta.jpg' %}" /></div>
                     <div class="details">
@@ -351,50 +499,109 @@
             </div>
         </div>
 
-        <div class="box1">
+        <div class="box1" data-aos="fade-up">
             <h2>Our Mission</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                eligendi
-                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                laudantium
-                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                aliquid nulla officia asperiores iure!</p>
+            <p>The mission of our company is to provide a safe, professional, and enjoyable experience for its clients.
+                The company strives to hire only the most qualified and experienced male sex workers, and to provide its
+                clients with a wide range of services to meet their needs. The company is also committed to providing
+                its employees with a safe and supportive work environment.</p>
         </div>
-        <div class="box2">
+        <div class="box2" data-aos="fade-up">
             <h2>Our Vision</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                eligendi
-                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                laudantium
-                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                aliquid nulla officia asperiores iure!</p>
+            <p>As a sex company our vision is to provide a safe, respectful, and enjoyable experience for
+                both clients and employees. The company strives to create a positive and welcoming environment where
+                everyone feels comfortable and respected. The company also believes in providing its employees with the
+                opportunity to earn a fair wage and have a positive impact on the lives of their clients.
+            </p>
         </div>
-        <div class="box3">
+        <div class="box3" data-aos="fade-up">
             <h2>Our Values</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio consequatur expedita in
-                eligendi
-                sapiente, minima magni animi quibusdam vel rem eos, provident nam nisi quo debitis iure. Porro
-                placeat distinctio dolorum laboriosam dicta? Eligendi, voluptates fugit dolor est, tenetur, esse
-                illum quos necessitatibus ratione quas debitis vel libero a ab quo possimus quae ipsam dolorum
-                beatae labore magnam perspiciatis ea alias error? Atque debitis cum cumque facere quis aliquid
-                nesciunt cupiditate dolore dicta earum eius, fuga molestiae officiis deleniti ratione,
-                laudantium
-                excepturi adipisci sequi amet vero quisquam maiores, tenetur veritatis? Distinctio maiores optio
-                aliquid nulla officia asperiores iure!</p>
+            <p>Male sex working companies value their employees and their customers. They provide a safe and comfortable
+                environment for their employees to work in, and they treat their customers with respect. They also
+                strive to provide high-quality services that meet the needs of their customers.</p>
+        </div>
+        <div class="test">
+            <div class="testamonialContainer">
+
+                <div class="grandParent">
+
+                    <div class="parent" data-aos="fade-up">
+                        <div class="child1">
+                            <div class="imageBackground">
+                                <div class="circle circleOne">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h1>Aayush Dhakal</h1>
+                                <h3>Backend Developer</h3>
+                                <p>Hello, I am a web developer and a wanna be AI Engineer.</p>
+                            </div>
+                        </div>
+                        <div class="child2">
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-js"></i>
+                            </a>
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-python"></i>
+                            </a>
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-react"></i>
+                            </a>
+
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-angular"></i>
+                            </a>
+                            <a href="" title="languageLogo">
+                                <i class="fa-brands fa-java"></i>
+                            </a>
+                            <a href="" title="languageLogo">
+                                <i class="{% static 'django.svg' %}"></i>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="parent" data-aos="fade-up">
+                        <div class="child1">
+                            <div class="imageBackground">
+                                <div class="circle circleTwo">
+                                    <img src="" alt="">
+                                </div>
+                            </div>
+                            <div class="info">
+                                <h1>Ashok Giri</h1>
+                                <h3>Frontend Developer</h3>
+                                <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic, porro.</p> -->
+                                <p>Hello, I am a frontend programmer and React Developer.</p>
+                            </div>
+                        </div>
+                        <div class="child2">
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-js"></i>
+                            </a>
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-python"></i>
+                            </a>
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-react"></i>
+                            </a>
+                            <a href="#" title="languageLogo">
+                                <i class="fa-brands fa-angular"></i>
+                            </a>
+                            <a href="" title="languageLogo">
+                                <i class="fa-brands fa-java"></i>
+                            </a>
+                            <a href="" title="languageLogo">
+                                <i class="fa-brands fa-django"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
-    <!-- <script>
-
-    </script> -->
     {% endblock %}
 
 </body>

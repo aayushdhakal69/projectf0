@@ -1,140 +1,167 @@
-/* This will apply for all the text color of a */
-.nav_a,
-i {
-color: rgb(185, 227, 184);
-}
+{% extends 'base1.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
 
-.logo a,
-i {
-font-weight: bolder;
-font-size: larger;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.navbar {
-position: fixed;
-z-index: 1111;
-}
+    <!-- Google font  -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
 
-/* This will apply for upto 768 px deveoce only */
-@media (max-width: 768px) {
-.logo {
-border-bottom: 1px solid gray;
+    <title>Document</title>
+</head>
 
-}
+<body>
+    {% block content %}
+    <style>
+        .bannerContainer {
+            margin-top: 5rem;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+        }
 
-.navList {
-background: #003e29;
-}
+        .banner {
+            --hue: 197;
+            --saturation: 81%;
+            --light: 90%;
+            background-color: hsl(var(--hue) var(--saturation) var(--light));
+            padding: .5rem;
+            width: calc(100% - 10%);
+            height: 500px;
+            display: flex;
+            transition: all .3s ease-in-out;
+            border-radius: .2rem;
+        }
 
-.navbar {
-width: 100%;
-height: 5vh;
-}
-
-.logo {
-float: left;
-display: flex;
-justify-content: space-around;
-align-items: center;
-height: 5vh;
-width: 100%;
-position: fixed;
-background-color: rgb(10, 43, 29);
-
-
-}
-
-.navList a {
-display: flex;
-gap: 0 1rem;
-align-items: center;
-justify-content: center;
-}
-
-.navList {
-float: right;
-display: flex;
-flex-direction: column;
-gap: 0 1rem;
-height: 95vh;
-position: fixed;
-top: 5vh;
-width: 100%;
-align-items: center;
-justify-content: center;
-gap: 2rem 0;
-left: -100%;
-transition: all .5s;
-z-index: 999;
-background-color: rgb(10, 43, 29);
-
-
-}
-
-/* hiding croos at initially */
-.cross {
-display: none;
-}
-
-.menu {
-row-gap: 20px;
-}
-}
-
-/* this will apply after 768px device only */
-@media(min-width: 768px) {
-
-/* hiding hamburger and cross in large device */
-.cross,
-.hamBurger {
-display: none;
-}
-
-.navbar {
-display: flex;
-justify-content: space-between;
-padding: 0 5%;
-height: 7vh;
-align-items: center;
-border-bottom: 1px solid gray;
-position: fixed;
-width: 100%;
-background-color: rgb(10, 43, 29);
-z-index: 999;
-}
-
-.navList {
-display: flex;
-gap: 0 1rem;
-}
-
-.navList a {
-padding: .2rem 2rem;
-transition: .3s;
-display: flex;
-gap: 0 1rem;
-}
-
-.navList a:hover,
-a.active {
-border-radius: 1rem;
-background: rgb(124, 172, 126);
-}
-}
+        .banner:hover {
+            --light: 10%;
+            cursor: default;
+            color: white;
+        }
 
 
 
+        .information {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-const navList = document.querySelector('.navList')
-const hamBurger = document.querySelector('.hamBurger');
-hamBurger.addEventListener('click', function () {
-navList.style.left = '0';
-hamBurger.style.display = 'none';
-cross.style.display = 'block';
-})
-const cross = document.querySelector('.cross');
-cross.addEventListener('click', function () {
-navList.style.left = "-100%"
-hamBurger.style.display = 'flex';
-cross.style.display = 'none';
-})
+        .information div {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .information div p {
+            letter-spacing: 1px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        table td {
+            padding: 1rem 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            border: none;
+        }
+
+        img {
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 2rem;
+        }
+
+        .image {
+            width: 50%;
+            display: flex;
+            filter: grayscale(40%);
+            transition: all .3s ease-in-out;
+            justify-content: center;
+        }
+
+        .banner:hover>.image {
+            filter: grayscale(0%);
+        }
+
+        @media (max-width: 768px) {
+            .bannerContainer {
+                align-items: center;
+                justify-content: center;
+                /* height: 100vh; */
+            }
+
+            .banner {
+                flex-direction: column-reverse;
+                height: auto;
+                gap: 1rem;
+                width: 100%;
+            }
+
+            .information,
+            .image {
+                width: 100%;
+            }
+
+            .information div {
+                width: inherit;
+            }
+
+            .image img {
+                border-radius: initial;
+                border-radius: .5rem;
+            }
+        }
+    </style>
+
+    <div class="bannerContainer">
+        <div class="banner">
+            <div class="information">
+                <div>
+                    <h1>Your Information</h1>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga earum eaque corrupti magni!
+                        Nesciunt
+                        recusandae provident id veniam assumenda quam.</p>
+                    <table>
+                        <tr>
+                            <td>Name: <span>{{post.name}}</span></td>
+                            <td>Age: <span>{{post.age}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>Dick Size: <span>{{post.dsize}}</span></td>
+                            <td>Height: <span>{{post.height}}</span></td>
+                        </tr>
+                        <tr>
+                            <td>Sex: <span>{{post.sex}}</span></td>
+                            <td>Speciality: <span>{{post.speciality}}</span></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="image">
+                <img src="/media/{{post.image}}" alt="">
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+</body>
+
+</html>
