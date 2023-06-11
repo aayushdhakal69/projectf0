@@ -36,7 +36,6 @@ def contact(request):
         phone = request.POST["phone"]
         email = request.POST["email"]
         content = request.POST["content"]
-        print(name, address, phone, email, content)
         my_list = [
             "@",
             "#",

@@ -160,7 +160,25 @@
             font-size: 13px;
             opacity: .6;
         }
+
+        .iftext {
+            margin-top: 3rem;
+        }
     </style>
+    {% if name %}
+    <center class="iftext">
+        <h2 style="color:#000 ;">Thanks {{ name }}!</h2>
+        <p style="color:#000 ;">
+            Received your message successfully.<br>We will message you as soon as possibe,<br> Have a Great Day!
+        </p>
+
+        <button class="btn btn-warning" id="btn-tq">
+            <a href="/">
+                Back
+            </a>
+        </button>
+    </center>
+    <br><br> <br> {% else %}
     <div class="main">
         <div class="main-contact">
             <h1 class="title">Hire Khetalo</h1>
@@ -332,7 +350,7 @@
         document.querySelector("#phone").value = "";
         document.querySelector("#name").value = "";
     </script>
-    {% endblock %}
+    {% endif %} {% endblock %}
 
 </body>
 
