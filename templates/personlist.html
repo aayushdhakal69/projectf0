@@ -34,6 +34,7 @@
             padding: 1rem;
             display: flex;
             justify-content: space-between;
+            gap: 1rem;
         }
 
         .personListButton {
@@ -99,6 +100,11 @@
 
         .titleBox .box {
             min-height: 20vh;
+            color: black;
+        }
+
+        .titleBox {
+            color: black;
         }
 
 
@@ -109,6 +115,7 @@
             display: flex;
             flex-direction: column;
             display: none;
+            background: red;
         }
 
         .personListContainer .div2 .titleBox {
@@ -189,6 +196,21 @@
         </div>
         <div class="div2">
             <div class="titleBox">
+                <div class="box_title">
+
+                    <h2>lorem</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ipsum?</p>
+                </div>
+                <div class="box_title">
+
+                    <h2>lorem</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ipsum?</p>
+                </div>
+                <div class="box_title">
+
+                    <h2>lorem</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, ipsum?</p>
+                </div>
             </div>
         </div>
         <div class="hamBox">
@@ -196,6 +218,48 @@
             <i class="fa-solid fa-circle-xmark" id="crossClick"></i>
         </div>
     </div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles-confetti@2.10.1/tsparticles.confetti.bundle.min.js"></script>
+
+    <script>
+        const duration = 5 * 1000,
+            animationEnd = Date.now() + duration;
+
+        let skew = 1;
+
+        function randomInRange(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        (function frame() {
+            const timeLeft = animationEnd - Date.now(),
+                ticks = Math.max(200, 500 * (timeLeft / duration));
+
+            skew = Math.max(0.8, skew - 0.001);
+
+            confetti({
+                particleCount: 1,
+                startVelocity: 0,
+                ticks: ticks,
+                origin: {
+                    x: Math.random(),
+                    // since particles fall down, skew start toward the top
+                    y: Math.random() * skew - 0.2,
+                },
+                colors: ["#ffffff"],
+                shapes: ["circle"],
+                gravity: randomInRange(0.4, 0.6),
+                scalar: randomInRange(0.4, 1),
+                drift: randomInRange(-0.4, 0.4),
+            });
+
+            if (timeLeft > 0) {
+                requestAnimationFrame(frame);
+            }
+        })();
+    </script>
     <script>
 
         const hamClick = document.querySelector("#hamClick")
