@@ -112,3 +112,8 @@ def personthree(request):
 # for testing only in developing mode
 def test(request):
     return render(request, "donttouch.html")
+
+
+# 404 handeler
+def error_404(request, exception):
+    return render(request, "error.html", status=404)

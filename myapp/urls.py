@@ -25,9 +25,7 @@ urlpatterns = [
     path("services/", views.services, name="services"),
     # Person urls
     path("personlist/", views.personlist, name="personlist"),
-    path("<str:slug>/", views.personone, name="personone"),
-    # path("persontwo/", views.persontwo, name="persontwo"),
-    # path("personthree/", views.personthree, name="personthree"),
+    path("personlist/<str:slug>/", views.personone, name="personone"),
     # personlist
     path("test/", views.test, name="test"),
 ]
